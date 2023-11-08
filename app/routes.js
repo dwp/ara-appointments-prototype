@@ -1,16 +1,8 @@
-//
-// For guidance on how to create routes see:
-// https://prototype-kit.service.gov.uk/docs/create-routes
-//
+const express = require('express')
+const router = express.Router()
 
-const govukPrototypeKit = require('govuk-prototype-kit')
-const router = govukPrototypeKit.requests.setupRouter()
+// Add your routes here - above the module.exports line
 
-
-// Add your routes here
-
-
-// routes v1 to v7-8
 
 // PIP telephone appointment journey logic
 
@@ -172,25 +164,4 @@ router.post('/what-assessments-answer', function (req, res) {
 
 })
 
-
 module.exports = router
-
-
-// Current sprint
-// ----------------------------
-
-
-// Start folder specific routes
-// ----------------------------
-
-router.use('/v8/', require('./views/v8/_routes'));
-router.use('/v9/', require('./views/v9/_routes'));
-router.use('/v10/', require('./views/v10/_routes'));
-
-router.use('/v1-rb/', require('./views/v1-rb/_routes'));
-router.use('/v2-rb/', require('./views/v2-rb/_routes'));
-
-
-
-
-

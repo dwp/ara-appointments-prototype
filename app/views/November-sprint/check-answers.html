@@ -18,7 +18,7 @@
       <h1 class="govuk-heading-xl">
         Check appointment details
       </h1>
-
+      <form action="../november-sprint/confirmation" method="post" novalidate>
       {{ govukSummaryList({
         rows: [
           {
@@ -95,13 +95,19 @@
 
      
 
-      <form action="/confirmation" method="post" novalidate>
+      
 
-        {{ govukButton({
-          text: "Book appointment",
-          preventDoubleClick: true,
-          href:"../../november-sprint/confirmation.html"
-        }) }}
+       
+       
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Book appointment"
+          }) }}
+        
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
 
        
 

@@ -27,7 +27,7 @@
             <h1 class="govuk-heading-l">
                 Appointments available
             </h1>
-
+            <form class="form" action="../november-sprint/check-answers" method="post">
             <nav class="govuk-pagination" role="navigation" aria-label="results">
               <div class="govuk-pagination__prev">
                 <a class="govuk-link govuk-pagination__link" href="#8" rel="prev">
@@ -116,13 +116,17 @@
           </nav>
         
           
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          <div class="govuk-button-group">
             {{ govukButton({
-            text: "Continue",
-            preventDoubleClick: true,
-            href:"/check-answers.html"
+              text: "Continue"
             }) }}
           
-
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
+          
+          </form>
         </div>
     </div>
 {% endblock %}

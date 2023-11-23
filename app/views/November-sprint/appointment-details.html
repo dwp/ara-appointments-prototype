@@ -21,7 +21,7 @@
 
 
       <h1 class="govuk-heading-l">Appointment details</h1>
-      <form class="form" action="calendar.html" method="post">
+      <form class="form" action="calendar" method="post">
 
         
         <div class="govuk-grid-row">
@@ -57,10 +57,10 @@ label: {
               text: "PIP"
             },
             {
-              value: "Other",
-              text: "Other",
+              value: "WCA",
+              text: "WCA",
               conditional: {
-                html: appointmentHtml
+               
               }
             }
           ]
@@ -93,9 +93,15 @@ label: {
 
 
     
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
 
       </form>
 

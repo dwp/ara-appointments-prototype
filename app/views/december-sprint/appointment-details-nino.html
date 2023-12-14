@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Appointment details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+
+      <h1 class="govuk-heading-l">Appointment details</h1>
+      <form class="form" action="calendar-nino" method="post">
+
+        
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set appointmentHtml %}
+{{ govukInput({
+id: "type-of-appointment",
+name: "type-of-appointment",
+ spellcheck: false,
+classes: "govuk-!-width-one-third",
+label: {
+  text: "Type of appointment"
+}
+}) }}
+{% endset -%}
+        {{ govukRadios({
+          idPrefix: "assessment-type",
+          name: "assessment-type",
+          fieldset: {
+            legend: {
+              text: "Appointment type",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Identity Verification (IDV) appointment",
+              text: "Identity Verification (IDV) appointment"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "assessment-channel",
+          name: "assessment-channel",
+          fieldset: {
+            legend: {
+              text: "Appointment channel",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Face to face",
+              text: "Face to face"
+            }
+          ]
+        }) }}  
+
+
+     
+
+
+    
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

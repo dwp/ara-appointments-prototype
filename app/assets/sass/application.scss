@@ -205,3 +205,92 @@ input[type=radio]:checked+label time{
 .dwp-flex {
   display: flex;
 }
+
+// Tab styling changes
+.govuk-tabs__list-item-small {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-left: 25px;
+}
+@media print {
+  .govuk-tabs__list-item-small {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .govuk-tabs__list-item-small {
+    font-size: 14px;
+    font-size: 0.9rem;
+    line-height: 1.25;
+  }
+}
+@media print {
+  .govuk-tabs__list-item-small {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+@media print {
+  .govuk-tabs__list-item-small:before {
+    color: #000000;
+  }
+}
+@media (min-width: 40.0625em) {
+  .js-enabled .govuk-tabs__list {
+    margin-bottom: 0;
+    border-bottom: 1px solid #b1b4b6;
+  }
+  .js-enabled .govuk-tabs__list:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .js-enabled .govuk-tabs__title {
+    display: none;
+  }
+  .js-enabled .govuk-tabs__list-item-small {
+    position: relative;
+    margin-right: 5px;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 10px 10px;
+    float: left;
+    background-color: #f3f2f1;
+    text-align: center;
+  }
+  .js-enabled .govuk-tabs__list-item:before {
+    content: none;
+  }
+  .js-enabled .govuk-tabs__list-item-small--selected {
+    position: relative;
+    margin-top: -5px;
+    margin-bottom: -1px;
+    padding: 10px 10px;
+    border: 1px solid #b1b4b6;
+    border-bottom: 0;
+    background-color: #ffffff;
+  }
+  .js-enabled .govuk-tabs__list-item--selected {
+      position: relative;
+      margin-top: -5px;
+      margin-bottom: -1px;
+      padding: 10px 10px;
+      border: 1px solid #b1b4b6;
+      border-bottom: 0;
+      background-color: #ffffff;
+    }
+  .js-enabled .govuk-tabs__list-item--selected .govuk-tabs__tab {
+    text-decoration: none;
+  }
+  .js-enabled .govuk-tabs__tab {
+    margin-bottom: 0;
+  }
+  .js-enabled .govuk-tabs__tab:link, .js-enabled .govuk-tabs__tab:visited {
+    color: #0b0c0c;
+  }
+}

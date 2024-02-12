@@ -1,5 +1,13 @@
 {% extends "layout.html" %}
-
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+  <a href="../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+     ARA Appointments
+  </a>
+  </div>
+  </header>
+{% endblock %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/button/macro.njk" import govukButton %}

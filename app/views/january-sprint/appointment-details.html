@@ -1,5 +1,13 @@
 {% extends "layouts/main.html" %}
-
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container",
+    useTudorCrown: true
+  }) }}
+{% endblock %}
 {% block pageTitle %}
   Appointment details – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}

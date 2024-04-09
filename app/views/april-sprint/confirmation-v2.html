@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+  <a href="../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+     ARA Appointments
+  </a>
+  </div>
+  </header>
+{% endblock %}
+{% block pageTitle %}
+Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Appointment booked",
+        html: ""
+      }) }}
+
+      
+
+      <h2 class="govuk-heading-m">
+        Appointment details 
+      </h2>
+
+      <p>
+        
+        <strong> Location:</strong> Handsworth 
+      </p>
+
+      <p>
+        <strong>Appointment type:</strong> PIP 
+      </p>
+     <p>
+        <strong>Appointment channel:</strong> Face to face
+    </p>
+    <p>
+        <strong>Date and time:</strong> Monday 22 April 2024 at 10:40am
+
+    </p>
+    <h2 class="govuk-heading-m">
+        Next steps
+      </h2>
+      <p>[configurable to service]</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

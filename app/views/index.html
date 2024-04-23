@@ -5,6 +5,202 @@
 {% endblock %}
 
 {% block content %}
+
+<style>
+  .govuk-details {
+    margin-bottom: 10px;
+  }
+</style>
+
+  <span class="govuk-caption-xl">Team Hawk</span>
+  <h1 class="govuk-heading-l">DWP Appointments</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-s">Vision</h2>
+    <p>A DWP standardised, reusable and scalable multi-service component which simplifies and automates the process of booking an appointment between a citizen and a relevant DWP agent.</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <!-- <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="https://dwpdigital.atlassian.net/wiki/spaces/HPDU/pages/133364220283/Interaction+and+Content+Design-+DWP+Appointment" target="_blank">Interaction and content design log</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#">UR reports</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#"></a>
+      </li>
+      <li>
+        <a class="govuk-link" href="#"></a>
+      </li>
+    </ul> -->
+  </div>
+</div>
+
+<br><br>
+
+<table class="govuk-table">
+  <!-- <caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption> -->
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Version</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Date added</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Change log</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">v7</th>
+      <td class="govuk-table__cell">April 2024</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Changes to 'Booked appointments' screen, filter options moved to seperate screen</li>
+          <li>Added ability to cancel one or multiple appointments</li>
+        </ul>
+
+        <details class="govuk-details" open>
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              User journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/april-sprint/appointment-details-vs">Book an appointment</a></li>
+              <li><a href="/april-sprint/booked-location1"> View booked appointments / cancel an appointment</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              All screens
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Book an appointment (VS):</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/april-sprint/appointment-details-vs"> Appointment details - type/channel</a></li>
+              <li><a href="/april-sprint/cal-vs"> Appointments available</a></li>
+              <li><a href="/april-sprint/check-answers-vs"> Check appointment details</a></li>
+              <li><a href="/april-sprint/confirmation-v2"> Appointment booked - confirmation</a></li>
+            </ul>
+            <p>View booked appointments (HAS):</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/april-sprint/booked-location1"> Choose a location</a></li>
+              <li><a href="/april-sprint/booked-app-list1"> Booked appointments</a></li>
+              <li><a href="/april-sprint/filter-options"> Filter appointments</a></li>
+              <li><a href="/april-sprint/view-appointment"> Appointment details</a></li>
+              <li><a href="/april-sprint/confirm-cancel"> Appointment deatils - cancel appointment</a></li>
+              <li><a href="/april-sprint/booked-app-list2"> Booked appointments - apppointment cancelled</a></li>
+            </ul>
+          </div>
+        </details>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">v6 HAS</th>
+      <td class="govuk-table__cell">March 2024</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Book an appointment journey for Health Assessment Services (HAS)</li>
+        </ul>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              User journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/HAS-book-app/has-appointment-details">Book an appointment (iteration 1 design)</a></li>
+              <!-- <li><a href="/april-sprint/booked-app-location"> View booked appointments / cancel an appointment</a></li> -->
+            </ul>
+          </div>
+        </details>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              All screens
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Book an appointment (HAS):</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/HAS-book-app/has-appointment-details"> Appointment details - type/channel</a></li>
+              <li><a href="/HAS-book-app/has-cal"> Appointments available</a></li>
+              <li><a href="/HAS-book-app/has-check-answers"> Check appointment details</a></li>
+              <li><a href="/HAS-book-app/has-confirmation"> Appointment booked - confirmation</a></li>
+            </ul>
+            <!-- <p>View booked appointments:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/april-sprint/booked-app-location"> Choose a location</a></li>
+              <li><a href="/april-sprint/booked-app-list1"> Booked appointments</a></li>
+              <li><a href="#"> Filter appointments</a></li>
+              <li><a href="/april-sprint/view-appointment"> Appointment details</a></li>
+              <li><a href="/april-sprint/confirm-cancel"> Appointment deatils - cancel appointment</a></li>
+              <li><a href="/april-sprint/booked-app-list2"> Booked appointments - apppointment cancelled</a></li>
+            </ul> -->
+          </div>
+        </details>
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">v5</th>
+      <td class="govuk-table__cell">March 2024</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Book an appointment</li>
+        </ul>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              User journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/march-sprint/appointment-details-vs.html">Visiting Services user testing - Book an appointment</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              All screens
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/march-sprint/appointment-details-vs.html">Visiting services user testing</a></li>
+              <li><a href="/march-sprint/error-no-agent-skill-match.html">422 Error no available agent matching skill set</a></li>
+              <li><a href="/march-sprint/error-no-availability-diary.html">Error no available slots in</a></li>
+              <li><a href="march-sprint/booked-app-location.html">Booked appointments location (HAS)</a></li>
+              <li><a href="march-sprint/booked-app-list1.html">Booked appointments list view (HAS)</a></li>
+            </ul>
+          </div>
+        </details>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<br><br><br><br><br>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<h1 class="govuk-heading-l">Old layout</h1>
+
+
+
 <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
  
     <div class="govuk-accordion__section">
@@ -98,48 +294,57 @@
       </h2>
     </div>
 
-    <ul class="govuk-list">
-      <li>
-        <p><a href="march-sprint/appointment-details-vs.html">Visiting services user testing</a></p>
-      </li>
-      <li>
-        <p><a href="march-sprint/error-no-agent-skill-match.html">422 Error no available agent matching skill set</a></p>
-      </li>
-      <li>
-        <p><a href="march-sprint/error-no-availability-diary.html">Error no available slots in</a></p>
-      </li>
-      <li>
-        <p><a href="march-sprint/booked-app-location.html">Booked appointments location (HAS)</a></p>
-      </li>
-      <li>
-        <p><a href="march-sprint/booked-app-list1.html">Booked appointments list view (HAS)</a></p>
-      </li>
-      <li>
-        <p><a href="march-sprint/demo.html">Sina's demo</a></p>
-      </li>
-      
-    </ul>
-    <!-- <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <a href="march-sprint/appointment-details-vs.html">Visiting services user testing</a>
-    </div>
     <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <a href="march-sprint/error-no-agent-skill-match.html">422 Error no available agent matching skill set</a>
+      <ul class="govuk-list">
+        <li>
+          <p><a href="march-sprint/appointment-details-vs.html">Visiting services user testing</a></p>
+        </li>
+        <li>
+          <p><a href="march-sprint/error-no-agent-skill-match.html">422 Error no available agent matching skill set</a></p>
+        </li>
+        <li>
+          <p><a href="march-sprint/error-no-availability-diary.html">Error no available slots in</a></p>
+        </li>
+        <li>
+          <p><a href="march-sprint/booked-app-location.html">Booked appointments location (HAS)</a></p>
+        </li>
+        <li>
+          <p><a href="march-sprint/booked-app-list1.html">Booked appointments list view (HAS)</a></p>
+        </li>
+        <li>
+          <p><a href="march-sprint/demo.html">Sina's demo</a></p>
+        </li>
+      </ul>
     </div>
+
+  </div>
+
+  <!-- <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          April 
+        </span>
+      </h2>
+    </div>
+
     <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <a href="march-sprint/error-no-availability-diary.html">Error no available slots in</a>
+      <ul class="govuk-list">
+
+        <li>
+          <p><a href="april-sprint/booked-app-location.html">Booked appointments - location (HAS)</a></p>
+        </li>
+        <li>
+          <p><a href="april-sprint/booked-app-list1.html">Booked appointments - list view (HAS), iteration 2</a></p>
+        </li>
+        <li>
+          <p><a href="april-sprint/demo.html">Sina's demo</a></p>
+        </li>
+      </ul>
     </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <a href="march-sprint/booked-app-location.html">Booked appointments location (HAS)</a>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <a href="march-sprint/booked-app-list1.html">Booked appointments list view (HAS)</a>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-      <a href="march-sprint/demo.html">Sinas demo</a>
-    </div>
+
   </div> -->
 
-</div>
 
 {% endblock %}
 

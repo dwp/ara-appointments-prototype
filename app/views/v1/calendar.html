@@ -1,13 +1,5 @@
 {% extends "layout.html" %}
-{% block header %}
-<header class="govuk-header dwp-header" data-module="govuk-header">
-  <div class="govuk-width-container ">
-  <a href="../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
-     ARA Appointments
-  </a>
-  </div>
-  </header>
-{% endblock %}
+
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -35,7 +27,7 @@
             <h1 class="govuk-heading-l">
                 Appointments available
             </h1>
-            <form class="form" action="../january-sprint/check-answers" method="post">
+            <form class="form" action="../v1/check-answers" method="post">
             <nav class="govuk-pagination" role="navigation" aria-label="results">
               <div class="govuk-pagination__prev">
                 <a class="govuk-link govuk-pagination__link" href="#8" rel="prev">
@@ -53,57 +45,57 @@
             </nav>
 
             <div class="govuk-tabs" data-module="govuk-tabs">
-                <ul class="govuk-tabs__list">
-                    <li class="govuk-tabs__list-item-small govuk-tabs__list-item--selected">
-                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#monday">
-                    <div class="govuk-!-font-weight-bold">Monday</div>
-                    <div>22 Jan 2024</div>
-                    <div>10 slots available</div>
-                    </a>
-                    </li>
-                    <li class="govuk-tabs__list-item-small">
-                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#tuesday">
-                    <div class="govuk-!-font-weight-bold">Tuesday</div>
-                    <div>23 Jan 2024</div>
-                    <div>17 slots available</div>
-                    </a>
-                    </li>
-                    <li class="govuk-tabs__list-item-small">
-                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#wednesday">
-                    <div class="govuk-!-font-weight-bold">Wednesday</div>
-                    <div>24 Jan 2024</div>
-                    <div>22 slots available</div>
-                    </a>
-                    </li>
-                    <li class="govuk-tabs__list-item-small">
-                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#thursday">
-                    <div class="govuk-!-font-weight-bold">Thursday</div>
-                    <div>25 Jan 2024</div>
-                    <div>5 slots available</div>
-                    </a>
-                    </li>
-                    <li class="govuk-tabs__list-item-small">
-                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#friday">
-                    <div class="govuk-!-font-weight-bold">Friday</div>
-                    <div>26 Jan 2024</div>
-                    <div>0 slots available</div>
-                    </a>
-                    </li>
-                    <li class="govuk-tabs__list-item-small">
-                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#saturday">
-                    <div class="govuk-!-font-weight-bold">Saturday</div>
-                    <div>27 Jan 2024</div>
-                    <div>0 slots available</div>
-                    </a>
-                    </li>
-                    <li class="govuk-tabs__list-item-small">
-                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#sunday">
-                    <div class="govuk-!-font-weight-bold">Sunday</div>
-                    <div>28 Jan 2024</div>
-                    <div>0 slots available</div>
-                    </a>
-                    </li>
-                    </ul>
+            <ul class="govuk-tabs__list">
+              <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" style="text-align: left;">
+                <a class="govuk-tabs__tab" href="#monday">
+                  <strong>Monday</strong><br>
+                  10 Oct 2024<br><br>
+                  10 slots available
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="text-align: left;">
+                <a class="govuk-tabs__tab" href="#tuesday">
+                  <strong>Tuesday</strong><br>
+                  11 Oct 2024<br><br>
+                  17 slots available
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="text-align: left;">
+                <a class="govuk-tabs__tab" href="#wednesday">
+                  <strong>Wednesday</strong><br>
+                  12 Oct 2024<br><br>
+                  22 slots available
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="text-align: left;">
+                <a class="govuk-tabs__tab" href="#thursday">
+                  <strong>Thursday</strong><br>
+                  13 Oct 2024<br><br>
+                  5 slots available
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="text-align: left;">
+                <a class="govuk-tabs__tab" href="#friday">
+                  <strong>Friday</strong><br>
+                  14 Oct 2024<br><br>
+                  0 slots avaliable
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="text-align: left;">
+                <a class="govuk-tabs__tab" href="#saturday">
+                  <strong>Saturday</strong><br>
+                  15 Oct 2022<br><br>
+                  0 slots avaliable
+                </a>
+              </li>
+              <li class="govuk-tabs__list-item" style="text-align: left;">
+                <a class="govuk-tabs__tab" href="#sunday">
+                  <strong>Sunday</strong><br>
+                  16 Oct 2024<br><br>
+                  0 slots avaliable
+                </a>
+              </li>
+            </ul>
             <div class="govuk-tabs__panel" id="monday">
               {% include "app/views/includes/monday.html" %}
             </div>

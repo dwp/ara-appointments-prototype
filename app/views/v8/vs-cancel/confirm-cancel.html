@@ -1,0 +1,148 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+    <a href="../../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+      ARA Appointments
+    </a>
+  </div>
+</header>
+
+{% endblock %}
+{% block pageTitle %}
+  Jane Doe – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Appointment details
+      </h1>
+      <form class="form" action="booked-app-list2" method="post">
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Jane Doe
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              PIP
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date and time
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Wed 7 August 2023,<br>
+              11am
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Visiting officer
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Amy Gill
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Channel
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Hub visit
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+            </dd> -->
+          </div>
+          <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--red">
+                Failed to attend
+            </strong>
+            </dd>
+        
+          </div> -->
+        </dl>
+
+
+        <div class="govuk-error-summary" data-module="govuk-error-summary" style="padding-bottom: 0;">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              Are you sure you want to cancel this appointment?
+            </h2>
+            <p>You cannot undo this.</p>
+            <!-- <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#">Enter your full name</a>
+                </li>
+                <li>
+                  <a href="#">The date your passport was issued must be in the past</a>
+                </li>
+              </ul>
+            </div> -->
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Yes, cancel appointment",
+                classes: "govuk-button--warning"
+              }) }}
+              
+              <a class="govuk-link" href="#">Cancel</a>
+            </div>
+          </div>
+        </div>
+
+       
+        <!-- {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Cancel appointment",
+            classes: "govuk-button--warning"
+          }) }}
+          
+          <a class="govuk-link" href="#">Cancel</a>
+        </div> -->
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -10,6 +10,29 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 
+// Change the appointment owner - manual allocation (v8)
+router.post('/change-owner', function(request, response) {
+
+  var apptowner = request.session.data['apptowner']
+  if (apptowner == "Amy Gill"){
+      response.redirect("v8/has/book-appt/has-check-answers")
+  }
+  else if (apptowner == "Danny Travasso"){
+    response.redirect("v8/has/book-appt/has-cal2")
+  }
+  else if (apptowner == "Julie Smails"){
+    response.redirect("v8/has/book-appt/has-cal2")
+  }
+  else if (apptowner == "Monica Anyanwu"){
+    response.redirect("v8/has/book-appt/has-cal2")
+  }
+  else if (apptowner == "Raka Banerjee"){
+    response.redirect("v8/has/book-appt/has-cal2")
+  }
+})
+
+
+
 // PIP telephone appointment journey logic
 
 // Run this code when a form is submitted to 'interpreter-answer'

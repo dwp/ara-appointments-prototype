@@ -51,13 +51,55 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">v8</th>
+      <td class="govuk-table__cell">May 2024</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Manual allocation - added the ability to manually select an appointment owner (HAS)</li>
+          <!-- <li>Added the ability to amend a booking (HAS)</li> -->
+        </ul>
+
+        <details class="govuk-details" open>
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              User journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/v8/has/book-appt/has-appointment-details">Book an appointment - HAS</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="govuk-details" open>
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              All screens
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Book an appointment (HAS):</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/v8/has/book-appt/has-appointment-details"> Appointment details - type/channel</a></li>
+              <li><a href="/v8/has/book-appt/has-cal"> Appointments available</a></li>
+              <li><a href="/v8/has/book-appt/has-check-answers"> Check appointment details</a></li>
+              <li><a href="/v8/has/book-appt/appt-owners"> Select an HCP</a></li>
+              <li><a href="/v8/has/book-appt/has-confirmation"> Appointment booked - confirmation</a></li>
+            </ul>
+          </div>
+        </details>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">v7</th>
       <td class="govuk-table__cell">April 2024</td>
       <td class="govuk-table__cell">
         <ul class="govuk-list govuk-list--bullet">
           <li>Changes to 'Booked appointments' screen, filter options moved to seperate screen</li>
           <li>Added ability to cancel one or multiple appointments</li>
-          <li>Added versions of the 'View/Cancel' user journey for HAS and Apply for NINO and Visiting Services</li>
+          <li>Added versions of the 'View/Cancel' user journey for HAS, Apply for NINO and Visiting Services</li>
           <li>Added 'Book an appointment' journey for Visiting Services</li>
         </ul>
 
@@ -379,21 +421,6 @@
 </table>
 
 
-<!-- <li><a href="#"> </a></li> -->
-
-
-<!-- <br><br><br><br><br> -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -402,7 +429,6 @@
 
 
 <!-- <h1 class="govuk-heading-l">Old layout</h1>
-
 
 
 <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">

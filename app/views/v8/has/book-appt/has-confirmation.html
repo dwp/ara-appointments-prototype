@@ -30,16 +30,16 @@ Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
         <strong>Location:</strong> Handsworth 
       </p>
       <p>
-        <strong>Appointment type:</strong> {{ data['has-assessment-type'] or "PIP" }}  
+        <strong>Appointment type:</strong> {{ data ['has-type'] or "PIP" }}  
       </p>
       <p>
-        <strong>Appointment channel:</strong> {{ data['has-assessment-channel'] or "Telephone" }} 
+        <strong>Appointment channel:</strong> {{ data['has-channel'] or "Telephone" }} 
       </p>
       <p>
         <strong>Date and time:</strong> Monday 22 April 2024 at 10:40am
       </p>
       <p>
-        <strong>HCP:</strong> {{ data ['apptowner'] }} 
+        <strong>HCP:</strong> {{ data ['apptowner'] or "Amy Gill" }} 
       </p>
 
       <h2 class="govuk-heading-m">

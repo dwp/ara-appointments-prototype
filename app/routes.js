@@ -18,7 +18,7 @@ router.post('/change-owner', function(request, response) {
       response.redirect("v8/has/book-appt/has-check-answers")
   }
   else if (apptowner == "Danny Travasso"){
-    response.redirect("v8/has/book-appt/has-cal2")
+    response.redirect("v8/has/book-appt/has-check-answers")
   }
   else if (apptowner == "Julie Smails"){
     response.redirect("v8/has/book-appt/has-cal2")
@@ -28,6 +28,15 @@ router.post('/change-owner', function(request, response) {
   }
   else if (apptowner == "Raka Banerjee"){
     response.redirect("v8/has/book-appt/has-cal2")
+  }
+  else if (apptowner == "Rianna Johnson"){
+    response.redirect("v8/has/book-appt/has-cal2")
+  }
+  else if (apptowner == "Sarah Thornley"){
+    response.redirect("v8/has/book-appt/has-cal2")
+  }
+  else if (apptowner == "other"){
+    response.redirect("v8/has/book-appt/appt-owners-all")
   }
 })
 

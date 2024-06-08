@@ -85,7 +85,7 @@
               text: "Date and time"
             },
             value: {
-              text: "Monday 22 April 2024 at 10:40am" 
+              text:  "Monday 22 April 2024 at 9:00am" 
             },
             actions: {
               items: [
@@ -101,10 +101,10 @@
       }) }}
 
       <h2 class="govuk-heading-m">
-       Confirm the HCP for this appointment
+        This appointment is assigned to {{ data ['apptowner'] or "Amy Gill" }}
       </h2>
 
-      <p> This appointment is assigned to {{ data ['apptowner'] or "Amy Gill" }}.</p>
+      <!-- <p> </p> -->
 
       {{ govukSummaryList({
         rows: [

@@ -36,7 +36,8 @@ Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
         <strong>Appointment channel:</strong> {{ data['has-channel'] or "Telephone" }} 
       </p>
       <p>
-        <strong>Date and time:</strong> Monday 22 April 2024 at 10:40am
+        <strong>Date and time:</strong> Monday 22 April 2024 at {{ data['app-time'] }} 
+        <!-- Monday 22 April 2024 at 10:40am -->
       </p>
       <p>
         <strong>HCP:</strong> {{ data ['apptowner'] or "Amy Gill" }} 

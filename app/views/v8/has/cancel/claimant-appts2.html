@@ -17,6 +17,19 @@
             <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing govuk-width-container--extended" id="main-content" role="main">
                 <div class="govuk-grid-row">
 
+                    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+                    {% set html %}
+                    <h3 class="govuk-notification-banner__heading">
+                        Jane Doe's appointment has been cancelled
+                    </h3>
+                    {% endset %}
+
+                    {{ govukNotificationBanner({
+                    html: html,
+                    type: "success"
+                    }) }}
+
                     <div class="govuk-grid-column-full">
                         <!-- <span class="govuk-caption-l">{{ data['location'] }}</span> -->
                         <h1 class="govuk-heading-l">
@@ -24,12 +37,12 @@
                             <!-- Booked appointments -->    
                         </h1>
 
-                        <p>View current appointments to see the details, amend, or cancel the appointment.</p>
+                        <p>There are no current appointments..</p>
 
 
-                        <h2 class="govuk-heading-m">
+                        <!-- <h2 class="govuk-heading-m">
                             Upcoming appointments
-                        </h2>
+                        </h2> -->
 
 
 
@@ -46,37 +59,7 @@
                             </div>
                         </div> -->
 
-                        <table data-module="moj-sortable-table" class="govuk-table">
-                            <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <!-- <th scope="col" class="govuk-table__header">Claimant</th> -->
-                                    <th scope="col" class="govuk-table__header" aria-sort="none">Date and time</th>
-                                    <th scope="col" class="govuk-table__header">Type</th>
-                                    <th scope="col" class="govuk-table__header">Location</th>
-                                    <th scope="col" class="govuk-table__header" aria-sort="none">HCP</th>
-                                    <th scope="col" class="govuk-table__header" aria-sort="none">Channel</th>
-                                    <th scope="col" class="govuk-table__header" aria-sort="none"></th>
-                                    <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Status</th> -->
-                                </tr>
-                            </thead>
-                            <tbody class="govuk-table__body">
-                                <tr class="govuk-table__row srel esa handsworth">
-                                    <!-- <td class="govuk-table__cell"><a href="view-appointment" aria-describedby="claimant-detail-report">Jane Doe</a></td> -->
-                                    <td class="govuk-table__cell" data-sort-value="220708">Wed 7 August 2023, <Br>11am</td>
-                                    <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Tresco House, London</td>
-                                    <td class="govuk-table__cell" data-sort-value="1"> Amy Gill</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Face to face</td>
-                                    <td class="govuk-table__cell"><a href="view-appointment" aria-describedby="claimant-detail-report">View</a></td>
-                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
-                                        <strong class="govuk-tag govuk-tag--red">
-                                            Failed to attend
-                                        </strong>
-                                    </td> -->
-                                </tr>
-
-                            </tbody>
-                        </table>
+                        
 
                         <button type="submit" class="govuk-button" data-module="govuk-button">
                             Book a new appointment

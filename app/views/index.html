@@ -6,13 +6,14 @@
 
 {% block content %}
 
+
 <style>
   .govuk-details {
     margin-bottom: 10px;
   }
 </style>
 
-  <span class="govuk-caption-xl">Team Hawk</span>
+<span class="govuk-caption-xl">Team Hawk</span>
   <h1 class="govuk-heading-l">DWP Appointments</h1>
 
   <div class="govuk-grid-row">
@@ -50,13 +51,65 @@
     </tr>
   </thead>
   <tbody class="govuk-table__body">
+    <!-- <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">v9</th>
+      <td class="govuk-table__cell">June 2024</td>
+      <td class="govuk-table__cell">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Added the ability to amend a booked appointment</li>
+          <li>Added key details bar with customer's name, NINO and date of birth</li>
+          <li>Content changes to manual allocation journey</li>
+          <li>Removed the ability to bulk cancel appointment when view/managing appointments as this has been descoped</li>
+          <li>Changes to 'Appointment booked' screen to include journey back into the consuming service (HAS)</li>
+        </ul>
+
+        <details class="govuk-details" open>
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              User journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/v9/has/book-appt/has-appointment-details">Book an appointment - HAS</a></li>
+            </ul>
+          </div>
+        </details> -->
+
+        <!-- <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Individual screens
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Book an appointment (HAS):</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/v8/has/book-appt/has-appointment-details"> Appointment details - type/channel</a></li>
+              <li><a href="/v8/has/book-appt/has-cal"> Appointments available</a></li>
+              <li><a href="/v8/has/book-appt/has-check-answers"> Check appointment details</a></li>
+              <li><a href="/v8/has/book-appt/appt-owners"> Select an HCP</a></li>
+              <li><a href="/v8/has/book-appt/appt-owners-all"> Select an HCP - full list</a></li>
+              <li><a href="/v8/has/book-appt/appt-owners-all2"> Select an HCP - no other HCPs available for the chosen date/time</a></li>
+              <li><a href="/v8/has/book-appt/has-confirmation"> Appointment booked - confirmation</a></li>
+            </ul>
+            <p>Other</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li><a href="/v8/afn/booked-app-list4"> Booked appointment list - AfN (claimant ref number)</a></li>
+              <li><a href="/v8/afn/booked-app-list5"> Booked appointment list - AfN (claimant name removed)</a></li>
+              <li><a href="/v8/has/cancel/claimant-appts"> Claimant appointment list (HAS)</a></li>
+            </ul>
+          </div>
+        </details> -->
+
+      <!-- </td>
+    </tr> -->
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">v8</th>
       <td class="govuk-table__cell">May 2024</td>
       <td class="govuk-table__cell">
         <ul class="govuk-list govuk-list--bullet">
           <li>Manual allocation - added the ability to manually select an appointment owner when booking an appointment (HAS)</li>
-          <li>Amend a booking</li>
           <!-- <li>Added the ability to amend a booking (HAS)</li> -->
         </ul>
 

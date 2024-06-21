@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+  <a href="/../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+     ARA Appointments
+  </a>
+  </div>
+  </header>
+{% endblock %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{% block pageTitle %}
+    Book appointment
+{% endblock %}
+
+{% block beforeContent %}
+     
+
+    {{ govukBackLink({
+        text: "Back",
+        href: "javascript:history.back()"
+      }) }}
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-l">
+              Choose a time and date for this appointment
+            </h1>
+            <form class="form" action="has-check-answers" method="post">
+            <nav class="govuk-pagination" role="navigation" aria-label="results">
+              <div class="govuk-pagination__prev">
+                <a class="govuk-link govuk-pagination__link" href="#8" rel="prev">
+                  <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                  </svg>
+                  <span class="govuk-pagination__link-title">Previous week</span></a>
+              </div>
+
+              <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#8" rel="next"> <span class="govuk-pagination__link-title">Next week</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg></a>
+              </div>
+            </nav>
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item-small govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#monday">
+                    <div class="govuk-!-font-weight-bold">Monday</div>
+                    <div>22 Apr 2024</div>
+                    <div>10 slots available</div>
+                    </a>
+                    </li>
+                    <li class="govuk-tabs__list-item-small">
+                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#tuesday">
+                    <div class="govuk-!-font-weight-bold">Tuesday</div>
+                    <div>23 Apr 2024</div>
+                    <div>17 slots available</div>
+                    </a>
+                    </li>
+                    <li class="govuk-tabs__list-item-small">
+                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#wednesday">
+                    <div class="govuk-!-font-weight-bold">Wednesday</div>
+                    <div>24 Apr 2024</div>
+                    <div>22 slots available</div>
+                    </a>
+                    </li>
+                    <li class="govuk-tabs__list-item-small">
+                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#thursday">
+                    <div class="govuk-!-font-weight-bold">Thursday</div>
+                    <div>25 Apr 2024</div>
+                    <div>5 slots available</div>
+                    </a>
+                    </li>
+                    <li class="govuk-tabs__list-item-small">
+                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#friday">
+                    <div class="govuk-!-font-weight-bold">Friday</div>
+                    <div>26 Apr 2024</div>
+                    <div>0 slots available</div>
+                    </a>
+                    </li>
+                    <li class="govuk-tabs__list-item-small">
+                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#saturday">
+                    <div class="govuk-!-font-weight-bold">Saturday</div>
+                    <div>27 Apr 2024</div>
+                    <div>0 slots available</div>
+                    </a>
+                    </li>
+                    <li class="govuk-tabs__list-item-small">
+                    <a class="govuk-tabs__tab govuk-!-text-align-left" href="#sunday">
+                    <div class="govuk-!-font-weight-bold">Sunday</div>
+                    <div>28 Apr 2024</div>
+                    <div>0 slots available</div>
+                    </a>
+                    </li>
+                    </ul>
+            <div class="govuk-tabs__panel" id="monday">
+              {% include "app/views/includes/monday.html" %}
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tuesday">
+              {% include "app/views/includes/tuesday.html" %}
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="wednesday">
+              {% include "app/views/includes/wednesday.html" %}
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="thursday">
+              {% include "app/views/includes/thursday.html" %}
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="friday">
+              {% include "app/views/includes/friday.html" %}
+            </div> 
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="saturday">
+              {% include "app/views/includes/saturday.html" %}
+            </div> 
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="sunday">
+              {% include "app/views/includes/sunday.html" %}
+            </div> 
+          </div>
+
+          <nav class="govuk-pagination" role="navigation" aria-label="results">
+            <div class="govuk-pagination__prev">
+              <a class="govuk-link govuk-pagination__link" href="#8" rel="prev">
+                <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                <span class="govuk-pagination__link-title">Previous week</span></a>
+            </div>
+
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#8" rel="next"> <span class="govuk-pagination__link-title">Next week</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg></a>
+            </div>
+          </nav>
+        
+          
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
+          
+          </form>
+        </div>
+    </div>
+{% endblock %}

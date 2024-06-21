@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+    <a href="../../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+      ARA Appointments
+  </a>
+  </div>
+  </header>
+{% endblock %}
+{% block pageTitle %}
+Choose location - View booked appointments – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+    .autocomplete__input {
+      width: 50%;
+    }
+   
+  .autocomplete__menu{
+      width: 50%
+  }
+   
+  </style>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <form action="booked-app-list1" method="post" novalidate>
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="country">
+            Choose a location
+          </label>
+        </h1>
+        <div id="account-number-hint" class="govuk-hint">
+          Select a location to view and manage appointments
+        </div>
+        <div class="govuk-form-group">
+                
+            <select class="govuk-select" id="office-location" name="office-location" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+              <option value="" selected disabled>Select an option</option>
+              <option value="Stratford Jobcentre, London">Stratford Jobcentre, London</option>
+              <option value="Lambeth Civic Centre, Brixton, London">Lambeth Civic Centre, Brixton, London</option>
+              <option value="St Helens Ways to Work Centre, St Helens">St Helens Ways to Work Centre, St Helens</option>
+            </select>
+          </div>
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+        
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

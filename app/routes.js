@@ -6,9 +6,8 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+
 // Add your routes here
-
-
 
 // Change the appointment owner - manual allocation (v8)
 router.post('/change-owner', function(request, response) {
@@ -41,6 +40,8 @@ router.post('/change-owner', function(request, response) {
 })
 
 
+
+// routes v1 to v8
 
 // PIP telephone appointment journey logic
 
@@ -202,3 +203,31 @@ router.post('/what-assessments-answer', function (req, res) {
 
 })
 
+
+
+
+
+
+
+// GET SPRINT NAME - useful for relative templates
+router.use('/', (req, res, next) => {
+  res.locals.currentURL = req.originalUrl; //current screen
+  res.locals.prevURL = req.get('Referrer'); // previous screen
+  req.folder = req.originalUrl.split('/')[1]; //folder, e.g. 'current'
+  req.subfolder = req.originalUrl.split('/')[2]; //sub-folder e.g. 'service'
+  res.locals.folder = req.folder; // what folder the url is
+  res.locals.subfolder = req.subfolder; // what subfolder the URL is in
+console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subfolder  );
+  console.log('previous page is: ' + res.locals.prevURL + " and current page is " + req.url + " " + res.locals.currentURL );
+  next();
+});
+
+// current sprint, remember to add older sprint when adding a new folder!
+
+
+// Start folder specific routes
+// ----------------------------
+
+router.use('/v9', require('./views/v9/\_routes'));
+
+module.exports = router

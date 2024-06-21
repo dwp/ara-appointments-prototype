@@ -2,8 +2,8 @@
 {% block header %}
 <header class="govuk-header dwp-header" data-module="govuk-header">
   <div class="govuk-width-container ">
-    <a href="/../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
-      ARA Appointments
+  <a href="../../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+     ARA Appointments
   </a>
   </div>
   </header>
@@ -25,29 +25,24 @@ Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
       <h2 class="govuk-heading-m">
         Appointment details 
       </h2>
-
       <p>
-        <strong>Location:</strong> Handsworth 
+        <strong> Location:</strong> 	Stratford Jobcentre, London 
       </p>
       <p>
-        <strong>Appointment type:</strong> {{ data ['has-type'] or "PIP" }}  
+        <strong>Appointment type:</strong> {{ data['vs-type'] }}  
       </p>
       <p>
-        <strong>Appointment channel:</strong> {{ data['has-channel'] or "Telephone" }} 
+        <strong>Appointment channel:</strong> {{ data['vs-channel'] }} 
       </p>
       <p>
-        <strong>Date and time:</strong> Monday 22 April 2024 at {{ data['app-time'] }} 
-        <!-- Monday 22 April 2024 at 10:40am -->
-      </p>
-      <p>
-        <strong>HCP:</strong> {{ data ['apptowner'] or "Amy Gill" }} 
+        <strong>Date and time:</strong> Thursday 28 March 2024 at 10:40am
       </p>
 
       <h2 class="govuk-heading-m">
-          Next steps
+        Next steps
       </h2>
-      
-      <p><a href="">Exit DWP appointment booking</a></p>
+
+      <p>Return to Visiting Officer Update Tool.</p>
 
     </div>
   </div>

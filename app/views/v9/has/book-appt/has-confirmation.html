@@ -43,11 +43,24 @@ Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
         <strong>HCP:</strong> {{ data ['apptowner'] or "Amy Gill" }} 
       </p>
 
-      <h2 class="govuk-heading-m">
+      <br>
+
+      <!-- <h2 class="govuk-heading-m">
           Next steps
-      </h2>
+      </h2> -->
       
-      <p><a href="">Exit DWP appointment booking</a></p>
+      <!-- <p>
+        <a href=""> Exit DWP appointment booking</a>
+      </p> -->
+
+      <!-- <p>
+        Update the claimant's status.
+      </p> -->
+
+      {{ govukButton({
+        text: "Continue",
+        href: ""
+      }) }}
 
     </div>
   </div>

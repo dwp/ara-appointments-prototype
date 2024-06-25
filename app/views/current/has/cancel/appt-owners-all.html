@@ -4,8 +4,10 @@
   <div class="govuk-width-container ">
     <a href="/../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
       ARA Appointments
-  </a>
+    </a>
   </div>
+  {% include "includes/key-details.html" %}
+
   </header>
 {% endblock %}
 {% block pageTitle %}
@@ -24,15 +26,18 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-l">
-        Select an HCP
+        Select the HCP
       </h1>
 
-      <!-- <p>These HCPs are avilable for appointments on Monday 22 April 2024 at 10:40am.</p> -->
+      <p>
+        These are the people available to do  {{ data ['has-type'] or "PIP" }}  appointments via {{ data['has-channel'] or "Telephone" }}. You will need to pick a new time and date on the next screen.
+      </p>
       <!-- <form class="form" action="has-check-answers" method="post"> -->
-        <form class="form" action="/change-owner" method="post">
+        <form class="form" method="post">
 
-            <div class="govuk-inset-text">
-              There is no one else available to take appointments on Monday 22 April at 10:40. You need to select someone else and a new date and time.            </div>
+        
+        <!-- <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds"> -->
 
      
         {{ govukRadios({

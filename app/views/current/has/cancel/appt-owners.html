@@ -4,8 +4,10 @@
   <div class="govuk-width-container ">
     <a href="/../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
       ARA Appointments
-  </a>
+    </a>
   </div>
+  {% include "includes/key-details.html" %}
+
   </header>
 {% endblock %}
 {% block pageTitle %}
@@ -60,7 +62,7 @@
             },
             {
               value: "other",
-              text: "Select a someone else",
+              text: "Select someone else",
               hint: {
                 text: "You will also need to select a different date and time."
               }

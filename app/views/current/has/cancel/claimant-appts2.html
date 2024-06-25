@@ -5,6 +5,7 @@
             ARA Appointments
         </a>
     </div>
+    {% include "includes/key-details.html" %}
 </header>
 {% endblock %} {% block pageTitle %} Booked assessments - GOV.UK prototype {% endblock %} {% block content %}
 
@@ -15,20 +16,23 @@
             <a class="govuk-back-link docs-creator" href="booked-location1">Back</a>
 
             <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing govuk-width-container--extended" id="main-content" role="main">
+               
+                {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+                {% set html %}
+                <h3 class="govuk-notification-banner__heading">
+                    Jane Doe's appointment has been cancelled
+                </h3>
+                {% endset %}
+
+                {{ govukNotificationBanner({
+                html: html,
+                type: "success"
+                }) }}
+
                 <div class="govuk-grid-row">
 
-                    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-
-                    {% set html %}
-                    <h3 class="govuk-notification-banner__heading">
-                        Jane Doe's appointment has been cancelled
-                    </h3>
-                    {% endset %}
-
-                    {{ govukNotificationBanner({
-                    html: html,
-                    type: "success"
-                    }) }}
+                    
 
                     <div class="govuk-grid-column-full">
                         <!-- <span class="govuk-caption-l">{{ data['location'] }}</span> -->
@@ -37,7 +41,7 @@
                             <!-- Booked appointments -->    
                         </h1>
 
-                        <p>There are no current appointments..</p>
+                        <p>There are no current appointments.</p>
 
 
                         <!-- <h2 class="govuk-heading-m">
@@ -61,9 +65,9 @@
 
                         
 
-                        <button type="submit" class="govuk-button" data-module="govuk-button">
+                        <!-- <button type="submit" class="govuk-button" data-module="govuk-button">
                             Book a new appointment
-                          </button>
+                          </button> -->
 
                         <h2 class="govuk-heading-m">
                             Previous appointments
@@ -95,7 +99,7 @@
                                             Completed
                                         </strong>
                                     </td> -->
-                                    <td class="govuk-table__cell"><a href="cancel-amend" aria-describedby="claimant-detail-report">View</a></td>
+                                    <td class="govuk-table__cell"><a href="" aria-describedby="claimant-detail-report">View</a></td>
                                 </tr>
 
                                 

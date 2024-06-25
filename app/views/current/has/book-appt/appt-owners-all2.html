@@ -4,9 +4,11 @@
   <div class="govuk-width-container ">
     <a href="/../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
       ARA Appointments
-  </a>
+    </a>
   </div>
-  </header>
+  {% include "includes/key-details.html" %}
+
+</header>
 {% endblock %}
 {% block pageTitle %}
   Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
@@ -24,16 +26,15 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-l">
-        Select the HCP
+        Select an HCP
       </h1>
 
-      <p>These are the people available for appointments on Monday 22 April 2024 at 10:40am.</p>
+      <!-- <p>These HCPs are avilable for appointments on Monday 22 April 2024 at 10:40am.</p> -->
       <!-- <form class="form" action="has-check-answers" method="post"> -->
         <form class="form" method="post">
 
-        
-        <!-- <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds"> -->
+            <div class="govuk-inset-text">
+              There is no one else available to take appointments on Monday 22 April at 10:40. You need to select someone else and a new date and time.            </div>
 
      
         {{ govukRadios({
@@ -47,24 +48,26 @@
             }
           },
           items: [
-            {
-              value: "Amy Gill",
-              text: "Amy Gill"
-            },
-            {
-              value: "Danny Travasso",
-              text: "Danny Travasso"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "other",
-              text: "Select a someone else",
-              hint: {
-                text: "You will also need to select a different date and time."
-              }
-            }
+          {
+            value: "Julie Smails",
+            text: "Julie Smails"
+          },
+          {
+            value: "Monica Anyanwu",
+            text: "Monica Anyanwu"
+          },
+          {
+            value: "Raka Banerjee",
+            text: "Raka Banerjee"
+          },
+          {
+            value: "Rianna Johnson",
+            text: "Rianna Johnson"
+          },
+          {
+            value: "Sarah Thornley",
+            text: "Sarah Thornley"
+          }
           ]
         }) }}
 
@@ -85,18 +88,3 @@
     </div>
   </div>
 {% endblock %}
-
-
-<!-- ,
-            {
-              value: "Julie Smails",
-              text: "Julie Smails"
-            },
-            {
-              value: "Monica Anyanwu",
-              text: "Monica Anyanwu"
-            },
-            {
-              value: "Raka Banerjee",
-              text: "Raka Banerjee"
-            } -->

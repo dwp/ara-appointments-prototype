@@ -9,39 +9,8 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-// Change the appointment owner - manual allocation (v8)
-router.post('/change-owner', function(request, response) {
 
-  var apptowner = request.session.data['apptowner']
-  if (apptowner == "Amy Gill"){
-      response.redirect("v8/has/book-appt/has-check-answers")
-  }
-  else if (apptowner == "Danny Travasso"){
-    response.redirect("v8/has/book-appt/has-check-answers")
-  }
-  else if (apptowner == "Julie Smails"){
-    response.redirect("v8/has/book-appt/has-cal2")
-  }
-  else if (apptowner == "Monica Anyanwu"){
-    response.redirect("v8/has/book-appt/has-cal2")
-  }
-  else if (apptowner == "Raka Banerjee"){
-    response.redirect("v8/has/book-appt/has-cal2")
-  }
-  else if (apptowner == "Rianna Johnson"){
-    response.redirect("v8/has/book-appt/has-cal2")
-  }
-  else if (apptowner == "Sarah Thornley"){
-    response.redirect("v8/has/book-appt/has-cal2")
-  }
-  else if (apptowner == "other"){
-    response.redirect("v8/has/book-appt/appt-owners-all")
-  }
-})
-
-
-
-// routes v1 to v8
+// routes v1 to v7-8
 
 // PIP telephone appointment journey logic
 
@@ -204,30 +173,20 @@ router.post('/what-assessments-answer', function (req, res) {
 })
 
 
+module.exports = router
 
 
+// Current sprint
+// ----------------------------
 
-
-
-// GET SPRINT NAME - useful for relative templates
-router.use('/', (req, res, next) => {
-  res.locals.currentURL = req.originalUrl; //current screen
-  res.locals.prevURL = req.get('Referrer'); // previous screen
-  req.folder = req.originalUrl.split('/')[1]; //folder, e.g. 'current'
-  req.subfolder = req.originalUrl.split('/')[2]; //sub-folder e.g. 'service'
-  res.locals.folder = req.folder; // what folder the url is
-  res.locals.subfolder = req.subfolder; // what subfolder the URL is in
-console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subfolder  );
-  console.log('previous page is: ' + res.locals.prevURL + " and current page is " + req.url + " " + res.locals.currentURL );
-  next();
-});
-
-// current sprint, remember to add older sprint when adding a new folder!
-
+router.use('/current/', require('./views/current/_routes'));
 
 // Start folder specific routes
 // ----------------------------
 
-router.use('/v9', require('./views/v9/\_routes'));
+router.use('/v8/', require('./views/v8/_routes'));
 
-module.exports = router
+
+
+
+

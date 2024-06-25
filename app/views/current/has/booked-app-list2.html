@@ -9,32 +9,41 @@
 {% endblock %} {% block pageTitle %} Booked assessments - GOV.UK prototype {% endblock %} {% block content %}
 
 <div class="govuk-grid-row" style="margin-top: -40px;">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-">
         <div class="govuk-width-container">
             <!-- <a href="start" class="govuk-back-link">Back</a> -->
             <a class="govuk-back-link docs-creator" href="booked-location1">Back</a>
 
             <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing govuk-width-container--extended" id="main-content" role="main">
+
+                <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header" >
+                      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                        Success
+                      </h2>
+                    </div>
+                    <div class="govuk-notification-banner__content" >
+                      <h3 class="govuk-notification-banner__heading" style="max-width: 100%;">
+                        Appointment cancelled for:
+                      </h3>
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li> Jane Doe on Wed 7 August 2023, 11am</li>
+
+                      </ul>
+                      <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
+                    </div>
+                  </div>
+
                 <div class="govuk-grid-row">
 
                     <div class="govuk-grid-column-full">
                         <!-- <span class="govuk-caption-l">{{ data['location'] }}</span> -->
+
                         <h1 class="govuk-heading-l">
-                            {{ data['office-location'] }} appointments
+                            {{ data['office-location'] or "Handsworth, Birmingham" }} appointments
                             <!-- Booked appointments -->
                         </h1>
 
-                        <!-- <form class="form" action="filter-options" method="post">
-                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                Filter appointments
-                            </button>
-                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                Cancel appointments
-                            </button>
-                            {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        
-                        </form> -->
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full">
                                 <div class="govuk-button-group" style="float: left;">
@@ -43,54 +52,30 @@
                                     classes: "govuk-button--secondary",
                                     href: "filter-options"
                                     }) }}
-                                    {{ govukButton({
+                                    <!-- {{ govukButton({
                                         text: "Cancel selected appointments",
                                         classes: "govuk-button--warning",
                                         href: "cancel-selected"
-                                    }) }}
+                                    }) }} -->
                                 </div>
 
                                 <p class="govuk-body" style="float: right; margin: 7px 0;">
                                    <a href="#" class="govuk-link">HAS Homepage</a>
                                 </p>
 
-                                <!-- <div class="govuk-button-group" style="float: right;">
-                                    {{ govukButton({
-                                    text: "Return to [Service]",
-                                    classes: "govuk-button--secondary",
-                                    href: "#"
-                                    }) }}
-                                </div> -->
                             </div>
                         </div>
 
-                        <div id="account-number-hint" class="govuk-hint">
+                        <!-- <div id="account-number-hint" class="govuk-hint">
                             Select the appointments you want to cancel.
-                        </div>
-
-                        <!-- <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="organisation-0" name="organisation" type="checkbox" value="hmrc">
-                              <label class="govuk-label govuk-checkboxes__label" for="organisation-0">
-                                Select all appointments
-                              </label>
-                            </div>
                         </div> -->
+
+                        
 
                         <table data-module="moj-sortable-table" class="govuk-table">
                             <thead class="govuk-table__head">
                                 <tr class="govuk-table__row">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="select-all" name="select-all" type="checkbox" value="Select all">
-                                              <label class="govuk-label govuk-checkboxes__label" for="select-all">
-                                                <!-- Select all -->
-                                              </label>
-                                            </div>
-                                            <!-- <p><a href="#"> Select all</a></p> -->
-                                        </div>
-                                    </th>
+                                    <!-- <th scope="col" class="govuk-table__header"></th> -->
                                     <th scope="col" class="govuk-table__header">Claimant</th>
                                     <th scope="col" class="govuk-table__header">Type</th>
                                     <th scope="col" class="govuk-table__header" aria-sort="none">Date and time</th>
@@ -100,42 +85,9 @@
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body">
-                                {% if data['agent-appt'] != 'agent-cancelled' %}
-                                <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
-                                    <td class="govuk-table__cell"><a href="view-appointment" aria-describedby="claimant-detail-report">Jane Doe</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Wed 7 August 2023, <Br>11am</td>
-                                    <td class="govuk-table__cell" data-sort-value="1"> Amy Gill</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Face to face</td>
-                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
-                                        <strong class="govuk-tag govuk-tag--red">
-                                            Failed to attend
-                                        </strong>
-                                    </td> -->
-                                </tr>
-                                {% endif %}
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noelle Carmel</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Thu 8 August 2023,<br> 9am</td>
@@ -149,16 +101,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href="view-assessment-unassigned" aria-describedby="claimant-detail-report">Alex Smith</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Thu 8 August 2023, <br>11am</td>
@@ -174,16 +117,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Fran Cliffe</a></td>
                                     <td class="govuk-table__cell">UC</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Fri 9 August 2023, <br>11am</td>
@@ -197,16 +131,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-5" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-5">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                   
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Xia Jeana</a></td>
                                     <td class="govuk-table__cell">ESA</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Tue 13 August 2023, <br>1pm</td>
@@ -220,16 +145,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-6" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-6">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Sam Smart</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Wed 14 August 2023, <br>3pm</td>
@@ -243,16 +159,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-7" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-7">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Derren Brown</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Fri 15 August 2023, <br>11am</td>
@@ -266,16 +173,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-8" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-8">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noah Best</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  11am</td>
@@ -289,16 +187,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-9" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-9">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Lucy Steel</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023, <br> 9am</td>
@@ -312,16 +201,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-10" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-10">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Rachel Brown</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  1pm</td>
@@ -335,16 +215,7 @@
                                 </tr>
 
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <th scope="col" class="govuk-table__header">
-                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                            <div class="govuk-checkboxes__item">
-                                              <input class="govuk-checkboxes__input" id="organisation-11" name="organisation" type="checkbox" value="hmrc">
-                                              <label class="govuk-label govuk-checkboxes__label" for="organisation-11">
-                                                <!-- HM Revenue and Customs (HMRC) -->
-                                              </label>
-                                            </div>
-                                        </div>
-                                    </th>
+                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Paul Grey</a></td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  3pm</td>

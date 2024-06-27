@@ -59,9 +59,9 @@
                                     <!-- <th scope="col" class="govuk-table__header"></th> -->
                                     <th scope="col" class="govuk-table__header">Claimant</th>
                                     <th scope="col" class="govuk-table__header">Type</th>
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">Channel</th>
                                     <th scope="col" class="govuk-table__header" aria-sort="none">Date and time</th>
                                     <th scope="col" class="govuk-table__header" aria-sort="none">HCP</th>
-                                    <th scope="col" class="govuk-table__header" aria-sort="none">Channel</th>
                                     <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Status</th> -->
                                 </tr>
                             </thead>
@@ -70,9 +70,9 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     <td class="govuk-table__cell"><a href="view-appointment" aria-describedby="claimant-detail-report">Jane Doe</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Wed 7 August 2023, <Br>11am</td>
-                                    <td class="govuk-table__cell" data-sort-value="1"> Amy Gill</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Face to face</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Wed 7 August 2023, <Br>11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1"> Amy Gill</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--red">
                                             Failed to attend
@@ -85,9 +85,9 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noelle Carmel</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Thu 8 August 2023,<br> 9am</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Thu 8 August 2023,<br> 9:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -99,11 +99,11 @@
                                     
                                     <td class="govuk-table__cell"><a href="view-assessment-unassigned" aria-describedby="claimant-detail-report">Alex Smith</a></td>
                                     <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Thu 8 August 2023, <br>11am</td>
                                     <td class="govuk-table__cell" data-sort-value="1">
                                         {% if data['hcp99'] %} {{ data['hcp99'] }} {% else %} Unassigned {% endif %}
                                     </td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -115,9 +115,9 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Fran Cliffe</a></td>
                                     <td class="govuk-table__cell">UC</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Fri 9 August 2023, <br>11am</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Danny Travasso</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Fri 9 August 2023, <br>11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Danny Travasso</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -129,9 +129,9 @@
                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Xia Jeana</a></td>
                                     <td class="govuk-table__cell">ESA</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Tue 13 August 2023, <br>1pm</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Julie Smails</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Tue 13 August 2023, <br>1:00pm</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Julie Smails</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -143,9 +143,9 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Sam Smart</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Wed 14 August 2023, <br>3pm</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Wed 14 August 2023, <br>3:00pm</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -157,9 +157,10 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Derren Brown</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Fri 15 August 2023, <br>11am</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+
+                                    <td class="govuk-table__cell" data-sort-value="220708">Fri 15 August 2023, <br>11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--red">
                                             Failed to attend
@@ -171,9 +172,9 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noah Best</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  11am</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Raka Banerjee</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Raka Banerjee</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -185,9 +186,9 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Lucy Steel</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023, <br> 9am</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023, <br> 9:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -199,9 +200,9 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Rachel Brown</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  1pm</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  1:00pm</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -213,9 +214,10 @@
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Paul Grey</a></td>
                                     <td class="govuk-table__cell">PIP</td>
-                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  3pm</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Danny Travasso</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+
+                                    <td class="govuk-table__cell" data-sort-value="220708">Mon 18 August 2023,<br>  3:00pm</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Danny Travasso</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed

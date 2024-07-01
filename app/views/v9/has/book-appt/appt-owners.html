@@ -29,9 +29,7 @@
         Select the HCP
       </h1>
 
-      <p>
-        These are the people available to do  {{ data ['has-type'] or "PIP" }}  appointments via {{ data['has-channel'] or "Telephone" }}. You will need to pick a new time and date on the next screen.
-      </p>
+      <p>These are the people available for appointments on Monday 22 April 2024 at 10:40am.</p>
       <!-- <form class="form" action="has-check-answers" method="post"> -->
         <form class="form" method="post">
 
@@ -51,26 +49,24 @@
             }
           },
           items: [
-          {
-            value: "Julie Smails",
-            text: "Julie Smails"
-          },
-          {
-            value: "Monica Anyanwu",
-            text: "Monica Anyanwu"
-          },
-          {
-            value: "Raka Banerjee",
-            text: "Raka Banerjee"
-          },
-          {
-            value: "Rianna Johnson",
-            text: "Rianna Johnson"
-          },
-          {
-            value: "Sarah Thornley",
-            text: "Sarah Thornley"
-          }
+            {
+              value: "Amy Gill",
+              text: "Amy Gill"
+            },
+            {
+              value: "Danny Travasso",
+              text: "Danny Travasso"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "other",
+              text: "Select someone else",
+              hint: {
+                text: "You will also need to select a different date and time."
+              }
+            }
           ]
         }) }}
 
@@ -91,3 +87,18 @@
     </div>
   </div>
 {% endblock %}
+
+
+<!-- ,
+            {
+              value: "Julie Smails",
+              text: "Julie Smails"
+            },
+            {
+              value: "Monica Anyanwu",
+              text: "Monica Anyanwu"
+            },
+            {
+              value: "Raka Banerjee",
+              text: "Raka Banerjee"
+            } -->

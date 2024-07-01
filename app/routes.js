@@ -179,12 +179,12 @@ module.exports = router
 // Current sprint
 // ----------------------------
 
-router.use('/current/', require('./views/current/_routes'));
 
 // Start folder specific routes
 // ----------------------------
 
 router.use('/v8/', require('./views/v8/_routes'));
+router.use('/v9/', require('./views/v9/_routes'));
 
 
 

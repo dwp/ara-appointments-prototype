@@ -30,8 +30,17 @@
       </h1>
 
       <p>
-        These are the people available to do  {{ data ['has-type'] or "PIP" }}  appointments via {{ data['has-channel'] or "Telephone" }}. You will need to pick a new time and date on the next screen.
+        These are the people available to do:
       </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>{{ data ['has-type'] or "PIP" }} </li>
+        <li>{{ data['has-channel'] or "Telephone" }}</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        You will need to pick a new date and time on the next screen.
+      </div>
       <!-- <form class="form" action="has-check-answers" method="post"> -->
         <form class="form" method="post">
 

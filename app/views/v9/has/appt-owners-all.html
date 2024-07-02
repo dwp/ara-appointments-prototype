@@ -38,6 +38,10 @@
         <li>{{ data['has-channel'] or "Telephone" }}</li>
       </ul>
 
+      <div class="govuk-inset-text">
+        You will need to pick a new date and time on the next screen.
+      </div>
+
 
       <!-- <p>You will need to pick a new time and date on the next screen.</p> -->
 
@@ -83,9 +87,7 @@
           ]
         }) }}
 
-        <div class="govuk-inset-text">
-          You will need to pick a new time and date on the next screen.
-        </div>
+       
 
     
       {% from "govuk/components/button/macro.njk" import govukButton %}

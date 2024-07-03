@@ -62,10 +62,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     <!-- <td class="govuk-table__cell"><a href="view-appointment" aria-describedby="claimant-detail-report">Jane Doe</a></td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Wednesday 7 August 2023, <Br>11:00am</td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">{{ data['has-type'] or "PIP" }}</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Tresco House, London</td>
-                                    <td class="govuk-table__cell" data-sort-value="1"> Amy Gill</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Face to face</td>
+                                    <td class="govuk-table__cell" data-sort-value="1"> {{ data['apptowner'] or "Amy Gill" }}</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">{{ data['has-channel'] or "Face to face" }}</td>
                                     <td class="govuk-table__cell"><a href="view-appointment" aria-describedby="claimant-detail-report">Edit</a></td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--red">
@@ -100,7 +100,7 @@
                             </thead>
                             <tbody class="govuk-table__body">
                                 <tr class="govuk-table__row srel esa handsworth">
-                                    <td class="govuk-table__cell" data-sort-value="220708">Thursday 8 August 2023, <br>11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Thursday 8 August 2022, <br>11:00am</td>
                                     <td class="govuk-table__cell">PIP</td>
                                     <td class="govuk-table__cell" data-sort-value="220708">Tresco House, London</td>
                                     <td class="govuk-table__cell" data-sort-value="1"> Amy Gill</td>

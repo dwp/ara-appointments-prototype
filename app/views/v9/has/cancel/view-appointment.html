@@ -58,7 +58,7 @@
               Type
             </dt>
             <dd class="govuk-summary-list__value">
-              PIP
+              {{ data['has-type'] or "PIP" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="has-appointment-details">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -69,10 +69,10 @@
               Channel
             </dt>
             <dd class="govuk-summary-list__value">
-              Face to face
+              {{ data['has-channel'] or "Face to face" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="has-cal">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="has-appointment-details">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -84,7 +84,7 @@
               11:00am
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="has-cal">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -92,10 +92,10 @@
               HCP
             </dt>
             <dd class="govuk-summary-list__value">
-              Amy Gill
+              {{ data['apptowner'] or "Amy Gill" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+              <a class="govuk-link" href="appt-owners">Change<span class="govuk-visually-hidden"> name</span></a>
             </dd>
           </div>
           

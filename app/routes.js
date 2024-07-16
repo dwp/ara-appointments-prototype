@@ -186,6 +186,8 @@ module.exports = router
 router.use('/v8/', require('./views/v8/_routes'));
 router.use('/v9/', require('./views/v9/_routes'));
 
+router.use('/v1-rb/', require('./views/v1-rb/_routes'));
+
 
 
 

@@ -11,11 +11,14 @@
       <form action="../availability-added" method="post" class="form">
         <span class="govuk-caption-l">Monday 11 March 2024</span>
         <h1 class="govuk-heading-l"> What are they available for on Monday? </h1>
-        <div class="govuk-hint"> Adjust the times if they are not available for the entire morning. For example, if they stop before 12:00 (midday). </div>
+        <div class="govuk-hint"> 
+          Adjust the times if they are not available for the entire morning. For example, if they stop before 12:00 (midday). 
+        </div>
 
         <br>
         
-        <table class="govuk-table" > {% if  data['agent-mon-am-name'].includes('Amy Gill') %} 
+        {% if  data['agent-mon-am-name'].includes('Amy Gill') %} 
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Amy Gill</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -137,8 +140,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %} 
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Benjamin Marshall') %}
+        {% if  data['agent-mon-am-name'].includes('Benjamin Marshall') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Benjamin Marshall</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -260,8 +265,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %}
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Bernhard Fischer') %}
+          {% if  data['agent-mon-am-name'].includes('Bernhard Fischer') %}
+        <table class="govuk-table" >  
           <h2 class="govuk-heading-m">Bernhard Fischer</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -383,8 +390,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %} 
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Danny Zuko') %}
+          {% if  data['agent-mon-am-name'].includes('Danny Zuko') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Danny Zuko</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -506,8 +515,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %} 
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Emma Bradley') %}
+          {% if  data['agent-mon-am-name'].includes('Emma Bradley') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Emma Bradley</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -629,8 +640,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %} 
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Frieda Döring') %}
+          {% if  data['agent-mon-am-name'].includes('Frieda Döring') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Frieda Döring</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -752,8 +765,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %}
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Gabriel Mello') %}
+          {% if  data['agent-mon-am-name'].includes('Gabriel Mello') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Gabriel Mello</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -875,8 +890,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %} 
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Jane Smith') %}
+          {% if  data['agent-mon-am-name'].includes('Jane Smith') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Jane Smith</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -998,8 +1015,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %}
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Joe Bloggs') %}
+          {% if  data['agent-mon-am-name'].includes('Joe Bloggs') %}
+        <table class="govuk-table" >  
           <h2 class="govuk-heading-m">Joe Bloggs</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -1121,8 +1140,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %}
 
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Julie Smails') %}
+          {% if  data['agent-mon-am-name'].includes('Julie Smails') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Julie Smails</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -1244,8 +1265,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %} 
         
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Monica Anyanwu') %}
+          {% if  data['agent-mon-am-name'].includes('Monica Anyanwu') %}
+        <table class="govuk-table" >
           <h2 class="govuk-heading-m">Monica Anyanwu</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -1367,8 +1390,10 @@
               </td>
             </tbody>
           </table>
+          {% endif %} 
         
-        <table class="govuk-table" > {% endif %} {% if  data['agent-mon-am-name'].includes('Raka Banerjee') %}
+          {% if  data['agent-mon-am-name'].includes('Raka Banerjee') %}
+        <table class="govuk-table" > 
           <h2 class="govuk-heading-m">Raka Banerjee</h2>
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -1490,15 +1515,14 @@
               </td>
             </tbody>
           </table>
-            
-            {% endif %} 
+        {% endif %} 
 
         <button class="govuk-button" data-module="govuk-button">Save and continue</button>
       </form>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     </main>
-  </div> 
-</div>
+  <!-- </div> 
+</div> -->
 
 {% endblock %}

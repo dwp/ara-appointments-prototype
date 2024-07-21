@@ -1,0 +1,988 @@
+{% extends "layouts/main.html" %} 
+{% block pageTitle %} 
+  Home – {{serviceName}} – GOV.UK Prototype Kit 
+{% endblock %} 
+{% block content %} 
+
+<div class="govuk-grid-row" style="margin-top: -40px;">
+  <a href="../day/mon-am" class="govuk-back-link">Back</a>
+  <div class="govuk-grid-column-full-width">
+    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+      <form action="../availability-added" method="post" class="form">
+        <span class="govuk-caption-l">Monday 11 March 2024</span>
+        <h1 class="govuk-heading-l"> What are the appointment slots for Monday?</h1>
+        <div class="govuk-hint"> 
+          You can add as many appointment times as necessary.
+        </div>
+
+        <br>
+        
+        {% if  data['agent-mon-am-name'].includes('Amy Gill') %} 
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Amy Gill</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+           
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-1-1" name="loc-1" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-1-1">
+                              London, Stratford Jobcentre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-1-2" name="loc-1" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-1-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+              
+            </tbody>
+          </table>
+          {% endif %} 
+
+        {% if  data['agent-mon-am-name'].includes('Benjamin Marshall') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Benjamin Marshall</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-2-1" name="loc-2" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-2-1">
+                              St Helens, St Helens Ways to Work Centre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-2-2" name="loc-2" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-2-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+
+            </tbody>
+          </table>
+          {% endif %}
+
+          {% if  data['agent-mon-am-name'].includes('Bernhard Fischer') %}
+        <table class="govuk-table" >  
+          <h2 class="govuk-heading-m">Bernhard Fischer</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-3-1" name="loc-3" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-3-1">
+                              London, Lambeth Civic Centre, Brixton
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-3-2" name="loc-3" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-3-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+             
+            </tbody>
+          </table>
+          {% endif %} 
+
+          {% if  data['agent-mon-am-name'].includes('Danny Zuko') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Danny Zuko</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-4-1" name="loc-4" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-4-1">
+                              London, Lambeth Civic Centre, Brixton
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-4-2" name="loc-4" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-4-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+       
+            </tbody>
+          </table>
+          {% endif %} 
+
+          {% if  data['agent-mon-am-name'].includes('Emma Bradley') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Emma Bradley</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-5-1" name="loc-5" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-5-1">
+                              London, Stratford Jobcentre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-5-2" name="loc-5" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-5-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+  
+            </tbody>
+          </table>
+          {% endif %} 
+
+          {% if  data['agent-mon-am-name'].includes('Frieda Döring') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Frieda Döring</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-6-1" name="loc-6" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-6-1">
+                              St Helens, St Helens Ways to Work Centre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-6-2" name="loc-6" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-6-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+
+            </tbody>
+          </table>
+          {% endif %}
+
+          {% if  data['agent-mon-am-name'].includes('Gabriel Mello') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Gabriel Mello</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-7-1" name="loc-7" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-7-1">
+                              St Helens, St Helens Ways to Work Centre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-7-2" name="loc-7" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-7-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+ 
+            </tbody>
+          </table>
+          {% endif %} 
+
+          {% if  data['agent-mon-am-name'].includes('Jane Smith') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Jane Smith</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-8-1" name="loc-8" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-8-1">
+                              London, Stratford Jobcentre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-8-2" name="loc-8" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-8-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+              
+            </tbody>
+          </table>
+          {% endif %}
+
+          {% if  data['agent-mon-am-name'].includes('Joe Bloggs') %}
+        <table class="govuk-table" >  
+          <h2 class="govuk-heading-m">Joe Bloggs</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-9-1" name="loc-9" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-9-1">
+                              London, Stratford Jobcentre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-9-2" name="loc-9" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-9-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+         
+            </tbody>
+          </table>
+          {% endif %}
+
+          {% if  data['agent-mon-am-name'].includes('Julie Smails') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Julie Smails</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-10-1" name="loc-10" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-10-1">
+                              London, Stratford Jobcentre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-10-2" name="loc-10" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-10-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+       
+            </tbody>
+          </table>
+          {% endif %} 
+        
+          {% if  data['agent-mon-am-name'].includes('Monica Anyanwu') %}
+        <table class="govuk-table" >
+          <h2 class="govuk-heading-m">Monica Anyanwu</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-11-1" name="loc-11" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-11-1">
+                              London, Stratford Jobcentre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-11-2" name="loc-11" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-11-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+
+            </tbody>
+          </table>
+          {% endif %} 
+        
+          {% if  data['agent-mon-am-name'].includes('Raka Banerjee') %}
+        <table class="govuk-table" > 
+          <h2 class="govuk-heading-m">Raka Banerjee</h2>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <!-- <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th> -->
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body"> 
+            <tr class="govuk-table__row handsworth">
+              <!-- <td class="govuk-table__cell">Amy Gill</td> -->
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-start">
+                    <label class="govuk-label"> Start time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+            
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2" style="padding-top: 30px">
+                    <label class="govuk-label"></label>
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
+                  </div>
+                </div>
+              </td>
+
+              <td class="govuk-table__cell">
+                <div class="time-wrapper">
+                  <div class="time-end2">
+                    <div class="govuk-form-group">
+                      <!-- <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Filter
+                          </h1>
+                        </legend> -->
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-12-1" name="loc-12" type="radio" value="month">
+                            <label class="govuk-label govuk-radios__label" for="loc-12-1">
+                              London, Stratford Jobcentre
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="loc-12-2" name="loc-12" type="radio" value="year">
+                            <label class="govuk-label govuk-radios__label" for="loc-12-2">
+                              Working from home
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+          
+            </tbody>
+          </table>
+        {% endif %} 
+
+
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-button" data-module="govuk-button">
+           Save and continue
+          </button>
+  
+          <a class="govuk-link" href="../availability-view">Cancel</a>
+        </div>
+
+        <!-- <button class="govuk-button" data-module="govuk-button">Save and continue</button> -->
+
+        <!-- <a class="govuk-link" href="javascript:history.back()">Cancel</a> -->
+
+      </form>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    </main>
+  <!-- </div> 
+</div> -->
+
+{% endblock %}

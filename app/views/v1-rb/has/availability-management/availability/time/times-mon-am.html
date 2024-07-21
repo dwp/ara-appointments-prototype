@@ -10,9 +10,9 @@
     <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
       <form action="../availability-added" method="post" class="form">
         <span class="govuk-caption-l">Monday 11 March 2024</span>
-        <h1 class="govuk-heading-l"> What are they available for on Monday? </h1>
+        <h1 class="govuk-heading-l"> What are the appointment slots for Monday?</h1>
         <div class="govuk-hint"> 
-          Adjust the times if they are not available for the entire morning. For example, if they stop before 12:00 (midday). 
+          You can add as many appointment times as necessary.
         </div>
 
         <br>
@@ -23,11 +23,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -37,7 +37,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -45,8 +45,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -55,8 +55,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -148,11 +148,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -162,7 +162,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -170,8 +170,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -180,8 +180,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -273,11 +273,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -287,7 +287,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -295,8 +295,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -305,8 +305,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -325,7 +325,7 @@
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="loc-3-1" name="loc-3" type="radio" value="month">
                             <label class="govuk-label govuk-radios__label" for="loc-3-1">
-                              London, Treso House
+                              London, Tresco House
                             </label>
                           </div>
                           <div class="govuk-radios__item">
@@ -398,11 +398,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -412,7 +412,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -420,8 +420,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -430,8 +430,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -523,11 +523,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -537,7 +537,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -545,8 +545,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -555,8 +555,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -648,11 +648,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -662,7 +662,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -670,8 +670,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -680,8 +680,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -773,11 +773,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -787,7 +787,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -795,8 +795,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -805,8 +805,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -898,11 +898,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -912,7 +912,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -920,8 +920,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -930,8 +930,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -1023,11 +1023,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -1037,7 +1037,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1045,8 +1045,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1055,8 +1055,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -1148,11 +1148,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -1162,7 +1162,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1170,8 +1170,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1180,8 +1180,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -1273,11 +1273,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -1287,7 +1287,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1295,8 +1295,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1305,8 +1305,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -1398,11 +1398,11 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <div class="govuk-checkboxes govuk-checkboxes--small">
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Start</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;">Stop</th>
-                <th scope="col" class="govuk-table__header" style="width: 16%;"></th> <!-- add/remove link-->
-                <th scope="col" class="govuk-table__header" style="width: 31%;">Location</th>
-                <th scope="col" class="govuk-table__header" style="width: 21%;">Available for</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">Start</th>
+                <th scope="col" class="govuk-table__header" style="width: 13%;">End</th>
+                <th scope="col" class="govuk-table__header" style="width: 24%;"></th> <!-- add/remove link-->
+                <th scope="col" class="govuk-table__header" style="width: 33%;">Work location</th>
+                <th scope="col" class="govuk-table__header" style="width: 17%;">Available for</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body"> 
@@ -1412,7 +1412,7 @@
                 <div class="time-wrapper">
                   <div class="time-start">
                     <label class="govuk-label"> Start time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off" value="09:00">
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-start" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1420,8 +1420,8 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <label class="govuk-label"> Stop time </label>
-                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00">
+                    <label class="govuk-label"> End time </label>
+                    <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  >
                   </div>
                 </div>
               </td>
@@ -1430,8 +1430,8 @@
                 <div class="time-wrapper">
                   <div class="time-end2" style="padding-top: 30px">
                     <label class="govuk-label"></label>
-                    <a href="" >Add another</a>
-                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off" value="12:00"> -->
+                    <a href="" >Add another time block</a>
+                    <!-- <input class="govuk-input govuk-input--width-5" id="width-5" name="amy-time-end" type="text" aria-describedby="time-hint" autocomplete="off"  > -->
                   </div>
                 </div>
               </td>
@@ -1517,7 +1517,19 @@
           </table>
         {% endif %} 
 
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-button" data-module="govuk-button">
+           Save and continue
+          </button>
+  
+          <a class="govuk-link" href="../availability-view">Cancel</a>
+        </div>
+
+        <!-- <button class="govuk-button" data-module="govuk-button">Save and continue</button> -->
+
+        <!-- <a class="govuk-link" href="javascript:history.back()">Cancel</a> -->
+
       </form>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 

@@ -99,7 +99,20 @@
                       Work location
                     </dt>
                     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-                      London, Stratford Jobcentre
+
+                      <ul class="govuk-list govuk-list--bullet">
+                      
+                      {% if data['vs-location-1'] %}
+                      <li style="white-space:nowrap;">London, Lambeth Civic Centre, Brixton</li>
+                      {% endif %}
+                      {% if data['vs-location-2'] %}
+                      <li style="white-space:nowrap;">London, Stratford Jobcentre</li>
+                      {% endif %}
+                      {% if data['vs-location-3'] %}
+                      <li style="white-space:nowrap;">St Helens, St Helens Ways to Work Centre</li>
+                      {% endif %}
+                      </ul>
+                  
                     </dd>
     
                     <dd class="govuk-summary-list__actions">

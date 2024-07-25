@@ -79,7 +79,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                       {% if data['WCA-TA'] %}
                       <li style="white-space:nowrap;"> WCA telephone assessment (WCA TA)</li>
-
                       {% endif %}
 
                       {% if data['WCA-F2F'] %}
@@ -88,7 +87,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
                       {% if data['WCA-CN'] %}
                         <li style="white-space:nowrap;"> WCA complex neuro (WCA CN)</li>
-
                       {% endif %}
 
                     </ul>
@@ -115,7 +113,12 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                     Work location
                   </dt>
                   <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-                    Birmingham, Handsworth
+                      {% if data['hcp-location-1'] %}
+                        Birmingham, Handsworth
+                      {% endif %}
+                      {% if data['hcp-location-2'] %}
+                        London, Tresco House
+                      {% endif %}
                   </dd>
   
                   <dd class="govuk-summary-list__actions">

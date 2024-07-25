@@ -32,35 +32,43 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
             {{ govukCheckboxes({
+              
               hint: {
                 text: "Select all that apply."
               },
+              name: "hcp-skills",
               items: [
               {
                 value: "PIP TA",
                 text: "PIP telephone assessment (PIP TA)",
-                checked: true
+                checked: true,
+                name:"PIP-TA"
               },
               {
                 value: "PIP F2F",
                 text: "PIP face to face (PIP F2F)",
-                checked: true
+                checked: true,
+                name: "PIP-F2F"
               },
                 
               {
                 value: "WCA TA",
                 text: "WCA telephone assessment (WCA TA)",
-                checked: true
+                checked: true,
+                name: "WCA-TA"
               },
               {
                 value: "WCA F2F",
                 text: "WCA face to face (WCA F2F)",
-                checked: true
+                checked: true,
+                name: "WCA-F2F"
+
               },
               {
                 value: "WCA CN",
                 text: "WCA complex neuro (WCA CN)",
-                checked: true
+                checked: true,
+                name: "WCA-CN"
               }
              
               ]

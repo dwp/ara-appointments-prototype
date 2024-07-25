@@ -68,11 +68,27 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
                   </dt>
                   <dd class="govuk-summary-list__value" style="border-bottom:0px;">
                     <ul class="govuk-list govuk-list--bullet">
-                      <li style="white-space:nowrap;">PIP face to face (PIP F2F) </li>
-                      <li style="white-space:nowrap;"> PIP telephone assessment (PIP TA)</li>
-                      <li style="white-space:nowrap;"> WCA complex neuro (WCA CN)</li>
-                      <li style="white-space:nowrap;"> WCA face to face (WCA F2F)</li>
-                      <li style="white-space:nowrap;"> WCA telephone assessment (WCA TA)</li>
+
+                      {% if data['PIP-TA'] %}
+                        <li style="white-space:nowrap;">PIP face to face (PIP F2F) </li>
+                      {% endif %}
+
+                      {% if data['PIP-F2F'] %}
+                        <li style="white-space:nowrap;"> PIP telephone assessment (PIP TA)</li>
+                      {% endif %}
+
+                      {% if data['WCA-TA'] %}
+                        <li style="white-space:nowrap;"> WCA complex neuro (WCA CN)</li>
+                      {% endif %}
+
+                      {% if data['WCA-F2F'] %}
+                        <li style="white-space:nowrap;"> WCA face to face (WCA F2F)</li>
+                      {% endif %}
+
+                      {% if data['WCA-CN'] %}
+                        <li style="white-space:nowrap;"> WCA telephone assessment (WCA TA)</li>
+                      {% endif %}
+                      
                     </ul>
                   </dd>
                   <dd class="govuk-summary-list__actions">

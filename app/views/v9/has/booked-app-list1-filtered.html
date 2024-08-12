@@ -1,0 +1,590 @@
+{% extends "layouts/main.html" %} {% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+    <div class="govuk-width-container">
+        <a href="../../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+            ARA Appointments
+        </a>
+    </div>
+</header>
+{% endblock %} {% block pageTitle %} Booked assessments - GOV.UK prototype {% endblock %} {% block content %}
+
+<style>
+    .filters-selected {
+        background-color: 	#f3f2f1;
+        padding: 15px;
+        margin: 0 0 20px 0;
+    }
+    .filters-selected p {
+        margin-bottom: 0;
+    }
+    .filter-tags {
+        clear: both;
+    }
+    .tag-title {
+        float: left;
+        margin-right: 10px;
+        margin-top: 7px;
+        margin-bottom: 20px;
+    }
+   .filters-selected p.tag {
+        display: table-cell;
+        position: relative;
+        padding: .3125em;
+        border: 1px solid #505a5f;
+        border-radius: .3125em;
+        background-color: #f3f2f1;
+    } 
+</style>
+
+<div class="govuk-grid-row" style="margin-top: -40px;">
+    <div class="govuk-grid-column-">
+        <div class="govuk-width-container">
+            <!-- <a href="start" class="govuk-back-link">Back</a> -->
+            <a class="govuk-back-link docs-creator" href="booked-location1">Back</a>
+
+            <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing govuk-width-container--extended" id="main-content" role="main">
+                <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-full">
+                        <!-- <span class="govuk-caption-l">{{ data['location'] }}</span> -->
+
+                        <h1 class="govuk-heading-l">
+                            {{ data['office-location'] or "Handsworth, Birmingham" }} appointments
+                            <!-- Booked appointments -->
+                        </h1>
+
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+
+                                <div class="govuk-button-group">
+                                    {{ govukButton({
+                                    text: "Filter appointments",
+                                    classes: "govuk-button--secondary",
+                                    href: "filter-options"
+                                    }) }}
+                                    <!-- {{ govukButton({
+                                        text: "Cancel selected appointments",
+                                        classes: "govuk-button--warning",
+                                        href: "cancel-selected"
+                                    }) }} -->
+                                </div>
+
+                                <!-- <div class="filters-selected">
+                                    <div class="title">
+                                        <p class="govuk-body" style="font-weight: bold; float: left; margin-right: 10px;">
+                                            Selected filters
+                                        </p>
+                                        <p class="govuk-body" style="float: right;">
+                                            <a href="#"> Clear filters</a>
+                                        </p>
+                                    </div>
+                                    <div class="filter-tags">
+
+                                        <p class="tag-title" >Type:</p>
+                                        <p class="moj-filter__tag ">PIP</p>
+
+                                        <p class="tag-title" >Channel:</p>
+                                        <p class="moj-filter__tag ">Telephone</p>
+
+                                        <p class="tag-title" >HCP:</p>
+                                        <p class="moj-filter__tag ">Amy Gill</p>
+
+                                        <p class="tag-title">Date:</p>
+                                        <p class="moj-filter__tag ">30 March 2024 to 2 April 2024</p>
+
+                                    </div>
+                                </div> -->
+
+
+                                
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+
+                        <div class="moj-filter">
+
+                            <!-- <div class="moj-filter__header">
+                          
+                              <div class="moj-filter__header-title">
+                                <h2 class="govuk-heading-m">Filter</h2>
+                              </div>
+                          
+                              <div class="moj-filter__header-action">
+                          
+                              </div>
+                          
+                            </div> -->
+                          
+                            <div class="moj-filter__content">
+                              <div class="moj-filter__selected">
+                                <div class="moj-filter__selected-heading">
+
+                                  <div class="moj-filter__heading-title">
+                                    <h2 class="govuk-heading-m">Selected filters</h2>
+                                  </div>
+                                  <div class="moj-filter__heading-action">
+                                    <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                                  </div>
+                                </div>
+                          
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
+                                <ul class="moj-filter-tags">
+                                  <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> PIP</a></li>
+                                  <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> WCA</a></li>
+                                  <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> UC</a></li>
+                                </ul>
+                          
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Channel</h3>
+                                <ul class="moj-filter-tags">
+                                  <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Telephone</a></li>
+                                </ul>
+
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Date</h3>
+                                <ul class="moj-filter-tags">
+                                    <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> 30 March 2024</a></li>
+                                    <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> 2 April 2024 to 3 April 2024</a></li>
+                                </ul>
+
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-0">HCP</h3>
+                                <ul class="moj-filter-tags">
+                                  <li><a class="moj-filter__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span> Amy Gill</a></li>
+                                </ul>
+                          
+                              </div>
+                          
+                              <!-- <div class="moj-filter__options">
+                          
+                                <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+                                  Apply filters
+                                </button>
+                          
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-label--m" for="keywords">
+                                    Keywords
+                                  </label>
+                          
+                                  <input class="govuk-input" id="keywords" name="keywords" type="text">
+                          
+                                </div>
+                          
+                                <div class="govuk-form-group">
+                          
+                                  <fieldset class="govuk-fieldset">
+                          
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          
+                                      Type
+                          
+                                    </legend>
+                          
+                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                        <label class="govuk-label govuk-checkboxes__label" for="type">
+                                          Blue (18)
+                                        </label>
+                          
+                                      </div>
+                          
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                                        <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                          Yellow (5)
+                                        </label>
+                          
+                                      </div>
+                          
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                                        <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                                          Red (2)
+                                        </label>
+                          
+                                      </div>
+                          
+                                    </div>
+                          
+                                  </fieldset>
+                          
+                                </div>
+                          
+                                <div class="govuk-form-group">
+                          
+                                  <fieldset class="govuk-fieldset">
+                          
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          
+                                      Status
+                          
+                                    </legend>
+                          
+                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                                        <label class="govuk-label govuk-checkboxes__label" for="status">
+                                          Completed (2)
+                                        </label>
+                          
+                                      </div>
+                          
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                                        <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                                          Incomplete (5)
+                                        </label>
+                          
+                                      </div>
+                          
+                                      <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                                        <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                                          In progress (3)
+                                        </label>
+                          
+                                      </div>
+                          
+                                    </div>
+                          
+                                  </fieldset>
+                          
+                                </div>
+                          
+                              </div> -->
+                          
+                            </div>
+                          
+                          </div>
+
+
+                    </div>
+                </div>
+
+                <br>
+                          
+
+                        <!-- <div id="account-number-hint" class="govuk-hint">
+                            Select the appointments you want to cancel.
+                        </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+
+                        <table data-module="moj-sortable-table" class="govuk-table">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <!-- <th scope="col" class="govuk-table__header"></th> -->
+                                    <th scope="col" class="govuk-table__header">Claimant</th>
+                                    <th scope="col" class="govuk-table__header">Type</th>
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">Channel</th>
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">Date and time</th>
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">HCP</th>
+                                    <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Status</th> -->
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noelle Carmel</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Thursday 8 August 2023,<br> 9:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                            Completed
+                                        </strong>
+                                    </td> -->
+                                </tr>
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href="view-assessment-unassigned" aria-describedby="claimant-detail-report">Alex Smith</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Thursday 8 August 2023, <br>11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">
+                                        {% if data['hcp99'] %} {{ data['hcp99'] }} {% else %} Unassigned {% endif %}
+                                    </td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                            Completed
+                                        </strong>
+                                    </td> -->
+                                </tr>
+
+                                
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Sam Smart</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Wednesday 14 August 2023, <br>3:00pm</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                            Completed
+                                        </strong>
+                                    </td> -->
+                                </tr>
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Derren Brown</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+
+                                    <td class="govuk-table__cell" data-sort-value="220708">Friday 15 August 2023, <br>11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--red">
+                                            Failed to attend
+                                        </strong>
+                                    </td> -->
+                                </tr>
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noah Best</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023,<br>  11:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Raka Banerjee</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                            Completed
+                                        </strong>
+                                    </td> -->
+                                </tr>
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Lucy Steel</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023, <br> 9:00am</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                            Completed
+                                        </strong>
+                                    </td> -->
+                                </tr>
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Rachel Brown</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+                                    <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023,<br>  1:00pm</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                            Completed
+                                        </strong>
+                                    </td> -->
+                                </tr>
+
+                                <tr class="govuk-table__row srel esa handsworth">
+                                    
+                                    <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Paul Grey</a></td>
+                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
+
+                                    <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023,<br>  3:00pm</td>
+                                    <td class="govuk-table__cell" data-sort-value="1">Danny Travasso</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                            Completed
+                                        </strong>
+                                    </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- {{ govukButton({
+                            text: "Cancel selected appointments",
+                            classes: "govuk-button--warning",
+                            href: "cancel-selected"
+                        }) }} -->
+                        <!-- <nav class="moj-pagination" aria-label="Pagination navigation" style="text-align: right;"> -->
+                            <!-- <ul class="govuk-pagination__list">
+                                <li class="govuk-pagination__item govuk-pagination__item--current">
+                                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                                        1
+                                    </a>
+                                </li>
+                                <li class="govuk-pagination__item">
+                                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                                        2
+                                    </a>
+                                </li>
+                                <li class="govuk-pagination__item">
+                                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                                        3
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="govuk-pagination__next">
+                                <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                                    <span class="govuk-pagination__link-title"> Next<span class="govuk-visually-hidden"> page</span> </span>
+                                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                    </svg>
+                                </a>
+                            </div> -->
+                            <!-- <p class="moj-pagination__results">Showing <b>1</b> to <b>11</b> of <b>11</b> appointments</p> -->
+                        <!-- </nav> -->
+                    </div>
+                </div>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+                <script>
+
+$('#select-all').click(function(event) {   
+  if(this.checked) {
+      // Iterate each checkbox
+      $(':checkbox').each(function() {
+          this.checked = true;                        
+      });
+  } else {
+      $(':checkbox').each(function() {
+          this.checked = false;                       
+      });
+      
+  }
+}); 
+
+                    function hideAllWithClass(classname) {
+                        document.querySelectorAll("." + classname).forEach((element) => {
+                            element.style.visibility = "collapse";
+                        });
+                    }
+
+                    function showAllWithClass(classname) {
+                        document.querySelectorAll("." + classname).forEach((element) => {
+                            element.style.visibility = "visible";
+                        });
+                    }
+
+                    document.querySelector("#filters").addEventListener("submit", function (e) {
+                        e.preventDefault(); //stop form from submitting
+
+                        showAllWithClass("esa");
+                        showAllWithClass("pip");
+                        showAllWithClass("uc");
+                        showAllWithClass("tresco");
+                        showAllWithClass("handsworth");
+                        showAllWithClass("srel");
+                        showAllWithClass("no-srel");
+
+                        let benefitTypes = [];
+                        let sites = [];
+
+                        if (document.getElementById("srel").checked == true) {
+                            hideAllWithClass("no-srel");
+                        }
+
+                        if (document.getElementById("pip").checked == true || document.getElementById("esa").checked == true || document.getElementById("uc").checked == true) {
+                            if (document.getElementById("pip").checked == false) {
+                                hideAllWithClass("pip");
+                            } else {
+                                benefitTypes.push("Personal Independence Payment");
+                            }
+
+                            if (document.getElementById("esa").checked == false) {
+                                hideAllWithClass("esa");
+                            } else {
+                                benefitTypes.push("Employment Support Allowance");
+                            }
+
+                            if (document.getElementById("uc").checked == false) {
+                                hideAllWithClass("uc");
+                            } else {
+                                benefitTypes.push("Universal Credit");
+                            }
+                        }
+
+                        if (document.getElementById("handsworth").checked == true || document.getElementById("tresco").checked == true) {
+                            if (document.getElementById("handsworth").checked == false) {
+                                hideAllWithClass("handsworth");
+                            } else {
+                                sites.push("Handsworth");
+                            }
+
+                            if (document.getElementById("tresco").checked == false) {
+                                hideAllWithClass("tresco");
+                            } else {
+                                sites.push("Tresco");
+                            }
+                        }
+
+                        var count = 0;
+                        var elemnts = document.querySelectorAll(".govuk-table tr").forEach((element) => {
+                            if (element.style.visibility === "visible") {
+                                count += 1;
+                            }
+                        });
+
+                        if (count < 20) {
+                            document.getElementById("pagination").style.visibility = "collapse";
+                        } else {
+                            document.getElementById("pagination").style.visibility = "visible";
+                        }
+
+                        document.getElementById("paginationTotal").innerText = count;
+
+                        // var eol = document.getElementById('srel').checked ? " end of life" : "";
+                        // var benefitTypeString = benefitTypes.join(", ");
+                        // var sitesString = sites.join(", ");
+                        // var ifBenefitType = benefitTypes.length > 0 ? ' for ' : '';
+                        // var ifSites = sites.length > 0 ? ' at ' : '';
+
+                        //11 HCP review end of life referrals in PIP, ESA, UC at Birmingham Handsworth
+                        // var text = count + " report ready " + eol + " referrals " + ifBenefitType + benefitTypeString + ifSites + sitesString;
+                        var text = count + " referrals";
+
+                        document.getElementById("filter-playback").innerText = text;
+
+                        // document.getElementById('srelCount').innertext = document.querySelectorAll('.govuk-table tr.srel').length;
+                    });
+                </script>
+            </main>
+        </div>
+
+{% endblock %}

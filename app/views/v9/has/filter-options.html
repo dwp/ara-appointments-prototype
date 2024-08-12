@@ -39,7 +39,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-        <form action="../has/booked-app-list1" method="post" novalidate>
+        <form action="../has/booked-app-list1-filtered" method="post" novalidate>
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -349,22 +349,15 @@
                   </fieldset>
                 </div>
 
-
-
-
-
-                    
-
-            
-
-
                 </fieldset>
             </div>
 
             <br><br>
 
             <div class="govuk-button-group">
-                {{ govukButton({ text: "Apply filters" }) }}
+                {{ govukButton ({ 
+                  text: "Apply filters"
+                }) }}
 
                 <a class="govuk-link" href="#">Cancel</a>
             </div>

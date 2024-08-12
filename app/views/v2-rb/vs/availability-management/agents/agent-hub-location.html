@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" style="margin-top: -40px;">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+
+<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+    <form class="form" action="amy-gill-profile-location-updated" method="post">
+
+      <h1 class="govuk-heading-l">Where can Amy Gill conduct appointments?</h1>
+
+
+     
+          <div id="location-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="vs-location-1" name="vs-location-1" type="checkbox" value="Stratford Jobcentre, Londonh" >
+              <label class="govuk-label govuk-checkboxes__label" for="vs-location-1">
+               Lambeth Civic Centre, Brixton, London
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="vs-location-2" name="vs-location-2" type="checkbox" value="Lambeth Civic Centre, Brixton, London" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="vs-location-2">
+                Stratford Jobcentre, London
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="vs-location-3" name="vs-location-3" type="checkbox" value="St Helens Ways to Work Centre,  St Helens">
+              <label class="govuk-label govuk-checkboxes__label" for="vs-location-3">
+                St Helens Ways to Work Centre,  St Helens
+              </label>
+            </div>
+          
+          </div>
+        </fieldset>
+   
+<br>
+
+
+      <div class="govuk-button-group">
+        <button class="govuk-button govuk-button" data-module="govuk-button">
+         Save and continue
+        </button>
+
+  
+
+
+        <a class="govuk-link" href="javascript:history.back()">Cancel</a>
+      </div>
+
+      <br>
+      <br>
+
+  </div>
+
+</div>
+
+</main>
+</div>
+
+
+
+
+{% endblock %}
+

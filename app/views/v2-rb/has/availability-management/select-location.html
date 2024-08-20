@@ -9,34 +9,37 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row" style="margin-top: -40px;">
   <div class="govuk-grid-column-two-thirds">
-    <a href="select-location" class="govuk-back-link">Back</a>
+    <a href="../../../index-rb" class="govuk-back-link">Back</a>
   <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
   
  
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
 
-        <!-- <form class="form" action="/manage-what6" method="post"> -->
-          <form class="form" method="post">
+        <!-- <form class="form" method="post" href="manage-select"> -->
           
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Manage availability 
+            Which location do you want to manage?
           </h1>
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="manage" name="manage" type="radio" value="agents">
-            <label class="govuk-label govuk-radios__label" for="manage">
-              Set the appointment types, attributes and work location
+            <input class="govuk-radios__input" id="location" name="location" type="radio" value="handsworth">
+            <label class="govuk-label govuk-radios__label" for="location">
+            Birmingham, Handsworth
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="manage-2" name="manage" type="radio" value="availability">
-            <label class="govuk-label govuk-radios__label" for="manage-2">
-              Manage when HCPs can do appointments
+            <input class="govuk-radios__input" id="location-2" name="location" type="radio" value="tresco">
+            <label class="govuk-label govuk-radios__label" for="location-2">
+            London, Tresco House
             </label>
           </div>
+
+
+
+          
 <!-- hack so amy gill shows today assesment in appointment profile schedule -->
 <div class="hidden-radio-post">  
 
@@ -84,9 +87,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
 
 
+    <a href="manage-select">
     <button class="govuk-button" data-module="govuk-button">
       Continue
     </button>
+    </a>
 
 
   </div>

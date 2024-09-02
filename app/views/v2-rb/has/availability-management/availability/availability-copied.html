@@ -13,6 +13,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   } }
 </style>
 
+
 <div class="govuk-grid-row" style="margin-top: -40px;">
   <div class="govuk-grid-column-full">
     <div class="govuk-phase-banner">
@@ -28,7 +29,6 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   </div>
 </div>
 
-
 <div class="govuk-grid-row" style="margin-top: -40px;">
   <div class="govuk-grid-column-full">
     <a href="../manage-select" class="govuk-back-link">Back</a>
@@ -42,9 +42,19 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <div class="govuk-notification-banner__content">
      
      <h3 class="govuk-notification-banner__heading" >
-      Appointment availability added
+      Appointment copied
     </h3>
-    <p class="govuk-body" style="max-width: 655px !important;">Appointments can now be booked on <span style="white-space:nowrap">Monday 11 March 2024.</span></p>
+    <p class="govuk-body" style="max-width: 655px !important;">
+      Appointments can now be booked on 
+      <!-- <span style="white-space:nowrap">Monday 11 March 2024.</span> -->
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Tuesday 12 March 2024</li>
+        <li>Wednesday 13 March 2024</li>
+        <li>Thursday 14 March 2024</li>
+        <li>Friday 15 March 2024</li>
+        <li>Monday 18 March 2024</li>
+      </ul>
+    </p>
   
   </div>
 </div>
@@ -149,7 +159,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
       <!-- copy and change links -->
       <div class="copy-change" style="float: right;">
-        <button class="govuk-button govuk-button--secondary" href="test" style="margin: 0 20px 10px;">Copy day</button>
+        <button class="govuk-button govuk-button--secondary" style="margin: 0 20px 10px;">Copy day</button>
           <a class="govuk-link" href="day/mon-am" style="position: relative; top: 6px;">
             {% if data['agent-mon-am-name']  %} Change 
             {% else %}Add   {% endif %}

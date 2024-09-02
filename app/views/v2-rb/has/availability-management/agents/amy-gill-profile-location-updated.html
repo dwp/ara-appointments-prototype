@@ -1,12 +1,25 @@
-
-  
-  {% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %}
 
   {% block pageTitle %}
   Home – {{serviceName}} – GOV.UK Prototype Kit
   {% endblock %}
   
   {% block content %}
+  
+  <div class="govuk-grid-row" style="margin-top: -40px;">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+          <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Alpha
+          </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service. Help us to improve it by giving your <a class="govuk-link" href="#">feedback (opens in a new tab)</a>.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
   
   
     <div class="govuk-grid-row" style="margin-top: -70px;">
@@ -44,29 +57,36 @@
                 </h1>
     
                 <h2 class="govuk-heading-m">Personal details</h2>
-    
-                <dl class="govuk-summary-list">
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Name
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      Amy Gill
-                    </dd>
-                  </div>
-    
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Email
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      amygill@domain.gov.uk
-                    </dd>
-                  </div>
-    
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Amy Gill
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Contact details
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">07700 900457</p>
+                  <p class="govuk-body">amygill@domain.gov.uk</p>
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Available for</h2>
+
+            <p>Review and edit the appointment types, skills and attributes. </p>
+
+              <dl class="govuk-summary-list">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key" style="border-bottom:0px;">
-                      Available for
+                      Appointment types
                     </dt>
                     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
                       <ul class="govuk-list govuk-list--bullet">
@@ -99,27 +119,32 @@
                 </dl>
     
                 <h2 class="govuk-heading-m">Location</h2>
+
+                <p>Review and edit work locations</p>
+
     
                 <dl class="govuk-summary-list">
                   <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key" style="border-bottom:0px;">
+                    <!-- <dt class="govuk-summary-list__key" style="border-bottom:0px;">
                       Assigned office
                     </dt>
                     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
                       Birmingham, Handsworth
-                    </dd>
+                    </dd> -->
                   </div>
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key" style="border-bottom:0px;">
                       Work location
                     </dt>
                     <dd class="govuk-summary-list__value" style="border-bottom:0px;">
-                      {% if data['hcp-location-1'] %}
+                      <!-- {% if data['hcp-location' == "none"] %}
                         Birmingham, Handsworth
                       {% endif %}
                       {% if data['hcp-location-2'] %}
                         London, Tresco House
-                      {% endif %}
+                      {% endif %} -->
+
+                      {{data['hcp-location']}} 
                     </dd>
     
                     <dd class="govuk-summary-list__actions">
@@ -131,6 +156,10 @@
                 <div class="govuk-form-group">
                   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
                 </div>
+
+                <p class="govuk-body">
+                  <a href="agent-profiles" class="govuk-link">Back to HCP profiles</a>
+                </p>
     
               </div>
     

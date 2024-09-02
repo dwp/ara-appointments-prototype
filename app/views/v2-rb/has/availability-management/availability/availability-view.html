@@ -13,6 +13,21 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
    } }
  </style>
 
+<div class="govuk-grid-row" style="margin-top: -40px;">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service. Help us to improve it by giving your <a class="govuk-link" href="#">feedback (opens in a new tab)</a>.
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
 
 <div class="govuk-grid-row" style="margin-top: -40px;">
   <div class="govuk-grid-column-full">
@@ -21,7 +36,7 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
   <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
   
     <h1 class="govuk-heading-l">
-      Set up appointments
+      Set up appointment availability for {{ data ['select-location'] or  "Birmingham, Handsworth" }}
     </h1>
 
     <p>Add or edit who will be doing appointments this week.</p>

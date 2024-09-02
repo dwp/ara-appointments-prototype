@@ -11,7 +11,7 @@ router.post('/has/availability-management/manage-select', function (req, res) {
   if (manage == "agents"){
     res.redirect('agents/agent-profiles')
   } else {
-    res.redirect('/v1-rb/has/availability-management/availability/availability-view')
+    res.redirect('availability/availability-view')
   }
 
 })

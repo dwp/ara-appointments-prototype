@@ -4,6 +4,12 @@
 {% endblock %} 
 {% block content %} 
 
+<style>
+  .govuk-heading-s {
+    margin: 10px 0 10px 0;
+  }
+</style>
+
   <div class="govuk-grid-row" style="margin-top: -40px;">
     <div class="govuk-grid-column-full">
       <div class="govuk-phase-banner">
@@ -30,20 +36,44 @@
           There is a problem
         </h2>
         <div class="govuk-error-summary__body">
+
+          <h3 class="govuk-heading-s">Amy Gill</h3>
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#amy-time-start">Enter a time block for Amy Gill</a>
+              <a href="#amy-time-start">Enter a time block</a>
             </li>
             <li>
-              <a href="#loc-1-1">Select where Amy Gill can do appointments</a>
+              <a href="#loc-1-1">Select where they can do appointments</a>
             </li>
             <li>
-              <a href="#hcp-1-1">Select what Amy Gill is available for</a>
-            </li>
-            <li>
-              <a href="#benjamin-time-start">Enter a start time for Benjamin Marshall</a>
+              <a href="#hcp-1-1">Select what they are available for</a>
             </li>
           </ul>
+
+          <h3 class="govuk-heading-s">Benjamin Marshall</h3>
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#benjamin-time-start">Enter a start time</a>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s">Bernhard Fischer</h3>
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#benjamin-time-start">Enter an end time</a>
+            </li>
+            <li>
+              <a href="#benjamin-time-start">Enter an end time</a>
+            </li>
+          </ul>
+
+          <h3 class="govuk-heading-s">Danny Zuko</h3>
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#benjamin-time-start">Enter a time block</a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </div>
@@ -388,13 +418,13 @@
                         </legend> -->
                         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="loc-3-1" name="loc-3" type="radio" value="month" checked>
+                            <input class="govuk-radios__input" id="loc-3-1" name="loc-3" type="radio" value="month" >
                             <label class="govuk-label govuk-radios__label" for="loc-3-1">
                               London, Tresco House
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="loc-3-2" name="loc-3" type="radio" value="year">
+                            <input class="govuk-radios__input" id="loc-3-2" name="loc-3" type="radio" value="year" checked>
                             <label class="govuk-label govuk-radios__label" for="loc-3-2">
                               Working from home
                             </label>
@@ -409,13 +439,16 @@
               <td class="govuk-table__cell">
                 <div class="time-wrapper">
                   <div class="time-end2">
-                    <div class="govuk-form-group">
+                    <div class="govuk-form-group govuk-form-group--error">
                       <fieldset class="govuk-fieldset">
                         <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                           <h1 class="govuk-fieldset__heading">
                             Organisation
                           </h1>
                         </legend> -->
+                        <p id="nationality-error" class="govuk-error-message">
+                          <span class="govuk-visually-hidden">Error:</span> They cannot do face to face appointments if they are not working in an office 
+                        </p>
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="hcp-3-1" name="hcp-3" type="checkbox" value="hmrc" checked>

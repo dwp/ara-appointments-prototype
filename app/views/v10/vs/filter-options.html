@@ -1,0 +1,373 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+    <a href="../../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name" >
+      ARA Appointments
+    </a>
+  </div>
+</header>
+{% endblock %}
+{% block pageTitle %}
+  Filter appointments – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+    .autocomplete__input {
+        width: 50%;
+    }
+    .autocomplete__menu {
+        width: 50%;
+    }
+    .govuk-form-group {
+      margin-bottom: 40px;
+    }
+    .date-input-headings {
+      font-weight: bold;
+      margin: 30px 0 15px 0;
+    }
+</style>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <form action="../has/booked-app-list1-filtered" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Filter appointments for {{ data['office-location'] or "Handsworth, Birmingham"  }}
+                        </h1>
+                    </legend>
+                    <div id="contact-hint" class="govuk-hint">
+                      Select one or more filters to apply to the list.
+                    </div>
+
+                    <!-- <br> -->
+
+                    <ul class="govuk-list">
+                      <!-- <li>app type - pip, wca</li> -->
+                      <!-- <li>HCP dropdown</li> -->
+                      <!-- <li>start and end dates of appts</li> -->
+                      <!-- <li>channel</li> -->
+                      <!-- <li>status (maybe)</li> -->
+                    </ul>
+
+
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h2 class="govuk-fieldset__heading">
+                            Appointment type
+                          </h1>
+                        </legend>
+                        <!-- <div id="waste-hint" class="govuk-hint">
+                          Select all that apply.
+                        </div> -->
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="app-type" name="apptype" type="checkbox" value="ESA">
+                            <label class="govuk-label govuk-checkboxes__label" for="app-type">
+                              ESA (1)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="app-type-2" name="apptype" type="checkbox" value="PIP">
+                            <label class="govuk-label govuk-checkboxes__label" for="app-type-2">
+                              PIP (9)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="app-type-3" name="apptype" type="checkbox" value="UC">
+                            <label class="govuk-label govuk-checkboxes__label" for="app-type-3">
+                              UC (1)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="app-type-4" name="apptype" type="checkbox" value="WCA">
+                            <label class="govuk-label govuk-checkboxes__label" for="app-type-4">
+                              WCA (1)
+                            </label>
+                          </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="govuk-form-group">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h2 class="govuk-fieldset__heading">
+                             HCP
+                          </h1>
+                      </legend>
+                      <div id="location-hint" class="govuk-hint"></div>
+                      <select class="govuk-select" id="hcp" name="hcp" aria-describedby="choose a HCP">
+                          <option value="choose" selected>Choose HCP</option>
+                          <option value="Amy Gill"> Amy Gill</option>
+                          <option value="Danny Travasso">Danny Travasso</option>
+                          <option value="Julie Smails">Julie Smails</option>
+                          <option value="Monica Anyanwu">Monica Anyanwu</option>
+                          <option value="Raka Banerjee">Raka Banerjee</option>
+                      </select>
+                  </div>
+
+
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                          Date of appointment
+                        </h1>
+                      </legend>
+                      <!-- <div id="contact-hint" class="govuk-hint">
+                        Select one option.
+                      </div> -->
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                          <label class="govuk-label govuk-radios__label" for="contact">
+                            Specific date
+                          </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                  When was your passport issued?
+                                </h1>
+                              </legend> -->
+                              <div id="passport-issued-hint" class="govuk-hint">
+                                For example, 30 1 2024
+                              </div>
+                              <div class="govuk-date-input" id="passport-issued">
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                      Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                      Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                      Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                          <!-- <div class="govuk-form-group">
+                            <label class="govuk-label" for="contact-by-email">
+                              Email address
+                            </label>
+                            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                          </div> -->
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                          <label class="govuk-label govuk-radios__label" for="contact-2">
+                            Search range
+                          </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                          <!-- <div class="govuk-form-group">
+                            <label class="govuk-label" for="contact-by-phone">
+                              Phone number
+                            </label>
+                            <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
+                          </div> -->
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                  When was your passport issued?
+                                </h1>
+                              </legend> -->
+                              <div id="passport-issued-hint" class="govuk-hint">
+                                For example, 30 1 2024
+                              </div>
+                             
+                              <div class="govuk-date-input" id="filter-date-start">
+                                <p class="date-input-headings" style="margin-top: 0;">Start date</p>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="filter-date-start-day">
+                                      Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="filter-date-start-day" name="filter-date-start-day" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="filter-date-start-month">
+                                      Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="filter-date-start-month" name="filter-date-start-month" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="filter-date-start-year">
+                                      Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="filter-date-start-year" name="filter-date-start-year" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="govuk-date-input" id="filter-date-end">
+                                <p class="date-input-headings">End date</p>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="filter-date-end-day">
+                                      Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="filter-date-endd-day" name="filter-date-end-day" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="filter-date-end-month">
+                                      Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="filter-date-end-month" name="filter-date-endd-month" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                  <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="filter-date-end-year">
+                                      Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="filter-date-end-year" name="filter-date-end-year" type="text" inputmode="numeric">
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="email">
+                          <label class="govuk-label govuk-radios__label" for="contact-3">
+                            Search all dates
+                          </label>
+                        </div>
+                    
+                      </div>
+                    </fieldset>
+                  </div>
+
+
+
+
+<!-- 
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Date of appointment
+                        </legend>
+
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="appointment-date-hint">
+                                    <div id="dob-hint" class="govuk-hint">
+                                        For example, 15 3 2023
+                                    </div>
+                                    <div class="govuk-date-input" id="app-start-date">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric" />
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric" />
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item" style="margin-right: 0;">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric" style="max-width: 3.75em;"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div> -->
+
+
+
+
+
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      <h2 class="govuk-fieldset__heading">
+                        Channel
+                      </h1>
+                    </legend>
+                    <!-- <div id="waste-hint" class="govuk-hint">
+                      Select all that apply.
+                    </div> -->
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="channel" name="channel" type="checkbox" value="ESA">
+                        <label class="govuk-label govuk-checkboxes__label" for="channel">
+                          Face to face (1)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="channel-2" name="channel" type="checkbox" value="PIP">
+                        <label class="govuk-label govuk-checkboxes__label" for="channel-2">
+                          Telephone (10)
+                        </label>
+                      </div>
+                  </fieldset>
+                </div>
+
+                </fieldset>
+            </div>
+
+            <br><br>
+
+            <div class="govuk-button-group">
+                {{ govukButton ({ 
+                  text: "Apply filters"
+                }) }}
+
+                <a class="govuk-link" href="#">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+    <a href="/../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+      ARA Appointments
+    </a>
+  </div>
+  {% include "includes/key-details.html" %}
+
+</header>
+{% endblock %}
+{% block pageTitle %}
+Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Appointment amended
+          </h3>
+          <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
+        </div>
+      </div>
+
+
+      <h2 class="govuk-heading-m">
+        Appointment details 
+      </h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            St Helens Ways to Work Centre, St Helens
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data ['vs-type'] or "AA Review" }}  
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Channel
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['has-channel'] or "Telephone" }} 
+          </dd>
+        </div> -->
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date and time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday 22 April 2024 at {{ data['app-time'] or "10:00am" }} 
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Visiting officer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data ['apptowner'] or "Amy Gill" }} 
+          </dd>
+          
+        </div>
+      </dl>
+
+     
+      <br>
+
+      <p>
+        <a href="claimant-appts">Return to appointment list</a>
+      </p>
+
+      <!-- {{ govukButton({
+        text: "Continue",
+        href: "select-status"
+      }) }} -->
+
+    </div>
+  </div>
+
+{% endblock %}

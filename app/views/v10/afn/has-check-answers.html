@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+    <a href="/../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+      ARA Appointments
+    </a>
+  </div>
+  {% include "includes/key-details.html" %}
+
+</header>
+{% endblock %}
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">
+        Check appointment details
+      </h1>
+
+      <form action="has-confirmation" method="post" novalidate>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              text: "Tooting, London"
+            },
+            actions: {
+              items: [
+                {
+                 
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Appointment type"
+            },
+            value: {
+              text: data['afn-type'] or "Benefits"
+            },
+            actions: {
+              items: [
+                {
+                  href: "has-appointment-details.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          },
+         
+          {
+            key: {
+              text: "Date and time"
+            },
+            value: {
+              text:  "Monday 22 April 2024 at 9:00am" 
+            },
+            actions: {
+              items: [
+                {
+                  href: "has-cal.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        This appointment is assigned to {{ data ['apptowner'] or "Amy Gill" }}
+      </h2>
+
+      <!-- <p> </p> -->
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "IDV officer"
+            },
+            value: {
+              text: data['apptowner'] or "Amy Gill"
+            },
+            actions: {
+              items: [
+                {
+                  href: "appt-owners.html",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+     
+
+      
+
+       
+       
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Amend appointment"
+          }) }}
+        
+          <a class="govuk-link" href="#">Cancel</a>
+        </div>
+
+       
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

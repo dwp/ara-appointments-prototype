@@ -1,0 +1,212 @@
+{% extends "layouts/main.html" %}
+{% block header %}
+<header class="govuk-header dwp-header" data-module="govuk-header">
+  <div class="govuk-width-container ">
+    <a href="../index.html" class="govuk-header__link govuk-header__service-name dwp-header__container--service-name">
+      ARA Appointments
+    </a>
+  </div>
+</header>
+{% endblock %}
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+    .autocomplete__input {
+        width: 50%;
+    }
+
+    .autocomplete__menu {
+        width: 50%;
+    }
+</style>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <form action="../april-sprint/booked-app-list1" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Choose a location
+                        </h1>
+                    </legend>
+                    <div id="contact-hint" class="govuk-hint">
+                        Select a location to view and manage appointments
+                    </div>
+
+
+                    <!-- <div class="govuk-form-group"> -->
+                        <fieldset class="govuk-fieldset" aria-describedby="location-hint">
+                          <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                              How would you prefer to be contacted?
+                            </h1>
+                          </legend>
+                          <div id="contact-hint" class="govuk-hint">
+                            Select one option.
+                          </div> -->
+                          <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="location" name="location" type="radio" value="Handsworth">
+                              <label class="govuk-label govuk-radios__label" for="location">
+                                Handsworth
+                              </label>
+                            </div>
+                            <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-email">
+                                  Email address
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                              </div>
+                            </div> -->
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="location-2" name="location" type="radio" value="Tresco House">
+                              <label class="govuk-label govuk-radios__label" for="location-2">
+                                Tresco House
+                              </label>
+                            </div>
+                            <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-phone">
+                                  Phone number
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
+                              </div>
+                            </div> -->
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="location-3" name="location" type="radio" value="Other" data-aria-controls="conditional-location-3">
+                              <label class="govuk-label govuk-radios__label" for="location-3">
+                                Other
+                              </label>
+                            </div>
+                            <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-text">
+                                  Mobile phone number
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
+                              </div>
+                            </div> -->
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-location-3">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="location-3"> </label>
+                                    <select class="govuk-select" id="country" name="country" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+                                        <option value="" selected disabled>Select an option</option>
+                                        <option value="Bath">Bath</option>
+                                        <option value="Birmingham">Birmingham</option>
+                                        <option value="Bradford">Bradford</option>
+                                        <option value="Brighton & Hove">Brighton & Hove</option>
+                                        <option value="Bristol">Bristol</option>
+                                        <option value="Cambridge">Cambridge</option>
+                                        <option value="Canterbury">Canterbury</option>
+                                        <option value="Carlisle">Carlisle</option>
+                                        <option value="Chelmsford">Chelmsford</option>
+                                        <option value="Chester">Chester</option>
+                                        <option value="Chichester">Chichester</option>
+                                        <option value="Colchester">Colchester</option>
+                                        <option value="Coventry">Coventry</option>
+                                        <option value="Derby">Derby</option>
+                                        <option value="Doncaster">Doncaster</option>
+                                        <option value="Durham">Durham</option>
+                                        <option value="Ely">Ely</option>
+                                        <option value="Exeter">Exeter</option>
+                                        <option value="Gloucester">Gloucester</option>
+                                        <option value="Hereford">Hereford</option>
+                                        <option value="Kingston-upon-Hul">Kingston-upon-Hul</option>
+                                        <option value="Lancaster">Lancaster</option>
+                                        <option value="Leeds">Leeds</option>
+                                        <option value="Leicester">Leicester</option>
+                                        <option value="Lichfield">Lichfield</option>
+                                        <option value="Lincoln">Lincoln</option>
+                                        <option value="Liverpool">Liverpool</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+                          </div>
+                        </fieldset>
+                      <!-- </div> -->
+
+
+                    <!-- <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="handsworth" checked data-aria-controls="conditional-contact" />
+                            <label class="govuk-label govuk-radios__label" for="contact">
+                                Handsworth
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional" id="conditional-contact"></div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2" />
+                            <label class="govuk-label govuk-radios__label" for="contact-2">
+                                Tresco House
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2"></div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3" />
+                            <label class="govuk-label govuk-radios__label" for="contact-3">
+                                Other
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-text"> </label>
+                                <select class="govuk-select" id="country" name="country" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+                                    <option value="" selected disabled>Select an option</option>
+                                    <option value="Bath">Bath</option>
+                                    <option value="Birmingham">Birmingham</option>
+                                    <option value="Bradford">Bradford</option>
+                                    <option value="Brighton & Hove">Brighton & Hove</option>
+                                    <option value="Bristol">Bristol</option>
+                                    <option value="Cambridge">Cambridge</option>
+                                    <option value="Canterbury">Canterbury</option>
+                                    <option value="Carlisle">Carlisle</option>
+                                    <option value="Chelmsford">Chelmsford</option>
+                                    <option value="Chester">Chester</option>
+                                    <option value="Chichester">Chichester</option>
+                                    <option value="Colchester">Colchester</option>
+                                    <option value="Coventry">Coventry</option>
+                                    <option value="Derby">Derby</option>
+                                    <option value="Doncaster">Doncaster</option>
+                                    <option value="Durham">Durham</option>
+                                    <option value="Ely">Ely</option>
+                                    <option value="Exeter">Exeter</option>
+                                    <option value="Gloucester">Gloucester</option>
+                                    <option value="Hereford">Hereford</option>
+                                    <option value="Kingston-upon-Hul">Kingston-upon-Hul</option>
+                                    <option value="Lancaster">Lancaster</option>
+                                    <option value="Leeds">Leeds</option>
+                                    <option value="Leicester">Leicester</option>
+                                    <option value="Lichfield">Lichfield</option>
+                                    <option value="Lincoln">Lincoln</option>
+                                    <option value="Liverpool">Liverpool</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                </fieldset>
+            </div>
+
+            <div class="govuk-button-group">
+                {{ govukButton({ text: "Continue" }) }}
+
+                <a class="govuk-link" href="#">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

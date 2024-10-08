@@ -44,7 +44,7 @@ Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
             Location
           </dt>
           <dd class="govuk-summary-list__value">
-            Handsworth
+            St Helens Ways to Work Centre, St Helens
           </dd>
           
         </div>
@@ -53,19 +53,11 @@ Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
             Type
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data ['has-type'] or "PIP" }}  
+            {{ data ['vs-type'] or "PIP" }}  
           </dd>
          
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Channel
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['has-channel'] or "Telephone" }} 
-          </dd>
-          
-        </div>
+       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date and time
@@ -77,7 +69,7 @@ Appointment booked – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            HCP
+            Visiting officer
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data ['apptowner'] or "Amy Gill" }} 

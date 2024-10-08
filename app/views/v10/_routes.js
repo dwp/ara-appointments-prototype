@@ -346,4 +346,40 @@ router.post('/vs/cancel/appt-owners-all', function(request, response) {
   }
 })
 
+// Change the appointment owner / manual allocation - amend an appointment from booked appointment list
+router.post('/vs/appt-owners', function(request, response) {
+
+  var apptowner = request.session.data['apptowner']
+  if (apptowner == "Amy Gill"){
+      response.redirect("has-check-answers")
+  }
+  else if (apptowner == "Danny Travasso"){
+    response.redirect("has-check-answers")
+  }
+  else if (apptowner == "other"){
+    response.redirect("appt-owners-all")
+  }
+})
+
+router.post('/vs/appt-owners-all', function(request, response) {
+
+  var apptowner = request.session.data['apptowner']
+  if (apptowner == "Julie Smails"){
+    response.redirect("has-cal2")
+  }
+  else if (apptowner == "Monica Anyanwu"){
+    response.redirect("has-cal2")
+  }
+  else if (apptowner == "Raka Banerjee"){
+    response.redirect("has-cal2")
+  }
+  else if (apptowner == "Rianna Johnson"){
+    response.redirect("has-cal2")
+  }
+  else if (apptowner == "Sarah Thornley"){
+    response.redirect("has-cal2")
+  }
+})
+
+
 module.exports = router

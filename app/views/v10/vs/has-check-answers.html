@@ -38,7 +38,7 @@
               text: "Location"
             },
             value: {
-              text: "Handsworth"
+              text: "St Helens Ways to Work Centre, St Helens"
             },
             actions: {
               items: [
@@ -53,7 +53,7 @@
               text: "Appointment type"
             },
             value: {
-              text: data['has-type'] or "PIP"
+              text: data['vs-type'] or "AA Review"
             },
             actions: {
               items: [
@@ -65,23 +65,7 @@
               ]
             }
           },
-          {
-            key: {
-              text: "Channel"
-            },
-            value: {
-              text: data['has-channel'] or "Telephone"
-            },
-            actions: {
-              items: [
-                {
-                  href: "has-appointment-details.html",
-                  text: "Change",
-                  visuallyHiddenText: "Question 3"
-                }
-              ]
-            }
-          },
+         
           {
             key: {
               text: "Date and time"
@@ -112,7 +96,7 @@
         rows: [
           {
             key: {
-              text: "HCP"
+              text: "Visiting officer"
             },
             value: {
               text: data['apptowner'] or "Amy Gill"

@@ -46,7 +46,7 @@
                         <!-- <span class="govuk-caption-l">{{ data['location'] }}</span> -->
 
                         <h1 class="govuk-heading-l">
-                            {{ data['office-location'] or "Handsworth, Birmingham" }} appointments
+                            {{ data['office-location'] or "St Helens Ways to Work Centre, St Helens" }} appointments
                             <!-- Booked appointments -->
                         </h1>
 
@@ -83,22 +83,23 @@
                                 <tr class="govuk-table__row">
                                     <!-- <th scope="col" class="govuk-table__header"></th> -->
                                     <th scope="col" class="govuk-table__header">Claimant</th>
-                                    <th scope="col" class="govuk-table__header">Type</th>
-                                    <th scope="col" class="govuk-table__header" aria-sort="none">Date and time</th>
-                                    <th scope="col" class="govuk-table__header" aria-sort="none">HCP</th>
+                                    <!-- <th scope="col" class="govuk-table__header">Type</th> -->
                                     <th scope="col" class="govuk-table__header" aria-sort="none">Channel</th>
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">Date and time</th>
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">Visiting officer</th>
                                     <!-- <th scope="col" class="govuk-table__header" aria-sort="none">Status</th> -->
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body">
+                               
 
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noelle Carmel</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">Personal Acting Body</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Thursday 8 August 2023,<br> 9:00am</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -109,12 +110,12 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href="view-assessment-unassigned" aria-describedby="claimant-detail-report">Alex Smith</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">PIP1 Claim Completion</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Thursday 8 August 2023, <br>11:00am</td>
                                     <td class="govuk-table__cell" data-sort-value="1">
                                         {% if data['hcp99'] %} {{ data['hcp99'] }} {% else %} Unassigned {% endif %}
                                     </td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -125,10 +126,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Fran Cliffe</a></td>
-                                    <td class="govuk-table__cell">UC</td>
+                                    <td class="govuk-table__cell">Compliance Visit</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Friday 9 August 2023, <br>11:00am</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Danny Travasso</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -139,10 +140,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                    
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Xia Jeana</a></td>
-                                    <td class="govuk-table__cell">ESA</td>
+                                    <td class="govuk-table__cell">Compliance Visit</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Tuesday 13 August 2023, <br>1:00pm</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Julie Smails</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -153,10 +154,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Sam Smart</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">Compliance Visit</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Wednesday 14 August 2023, <br>3:00pm</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -167,10 +168,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Derren Brown</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">AA Review</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Friday 15 August 2023, <br>11:00am</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Monica Anyanwu</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--red">
                                             Failed to attend
@@ -181,10 +182,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Noah Best</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">AA Review</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023,<br>  11:00am</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Raka Banerjee</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -195,10 +196,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Lucy Steel</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">Overpayment Delivery - Civil Penalty</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023, <br> 9:00am</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -209,10 +210,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Rachel Brown</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">Compliance Visit</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023,<br>  1:00pm</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Amy Gill</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed
@@ -223,10 +224,10 @@
                                 <tr class="govuk-table__row srel esa handsworth">
                                     
                                     <td class="govuk-table__cell"><a href=" " aria-describedby="claimant-detail-report">Paul Grey</a></td>
-                                    <td class="govuk-table__cell">PIP</td>
+                                    <td class="govuk-table__cell">Compliance Visit</td>
+                                    <!-- <td class="govuk-table__cell" data-sort-value="1">Telephone</td> -->
                                     <td class="govuk-table__cell" data-sort-value="220708">Monday 18 August 2023,<br>  3:00pm</td>
                                     <td class="govuk-table__cell" data-sort-value="1">Danny Travasso</td>
-                                    <td class="govuk-table__cell" data-sort-value="1">Telephone</td>
                                     <!-- <td class="govuk-table__cell" data-sort-value="1">
                                         <strong class="govuk-tag govuk-tag--green">
                                             Completed

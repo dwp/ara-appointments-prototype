@@ -41,70 +41,193 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-        {% from "govuk/components/input/macro.njk" import govukInput %}
+       
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="location-hint">
+                <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    How would you prefer to be contacted?
+                  </h1>
+                </legend>
+                <div id="contact-hint" class="govuk-hint">
+                  Select one option.
+                </div> -->
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type" name="vs-type" type="radio" value="AA Claim Completion" {{ checked('vs-type','AA Claim Completion') }}>
+                    <label class="govuk-label govuk-radios__label" for="vs-type">
+                      AA Claim Completion
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-2" name="vs-type" type="radio" value="AA Review">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-2">
+                      AA Review
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-3" name="vs-type" type="radio" value="Benefit Entitlement Check">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-3">
+                      Benefit Entitlement Check
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-4" name="vs-type" type="radio" value="Compliance Visit">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-4">
+                      Compliance Visit
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-5" name="vs-type" type="radio" value="ESA - FTA WCA">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-5">
+                      ESA - FTA WCA
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-6" name="vs-type" type="radio" value="Payment Exception Service">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-6">
+                      Payment Exception Service
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-7" name="vs-type" type="radio" value="Personal Acting Body">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-7">
+                      Personal Acting Body
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-8" name="vs-type" type="radio" value="PIP1 Claim Completion">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-8">
+                      PIP1 Claim Completion
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-9" name="vs-type" type="radio" value="PIP2 Claim Completion">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-9">
+                      PIP2 Claim Completion
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-10" name="vs-type" type="radio" value="Overpayment Delivery - Civil Penalty">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-10">
+                      Overpayment Delivery - Civil Penalty
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-11" name="vs-type" type="radio" value="PPAB Disputes">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-11">
+                      PPAB Disputes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-12" name="vs-type" type="radio" value="UC - PAB-CAB">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-12">
+                      UC - PAB-CAB
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-13" name="vs-type" type="radio" value="UC - Post Gather">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-13">
+                      UC - Post Gather
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-14" name="vs-type" type="radio" value="UC - Safeguarding">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-14">
+                      UC - Safeguarding
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-15" name="vs-type" type="radio" value="UC - UC50 Completion">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-15">
+                      UC - UC50 Completion
+                    </label>
+                  </div>
 
-        {% set appointmentHtml %}
-        {{ govukInput({
-        id: "type-of-appointment",
-        name: "type-of-appointment",
-        spellcheck: false,
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Type of appointment"
-        }
-        }) }}
-        {% endset -%}
 
-        {{ govukRadios({
-          idPrefix: "has-type",
-          name: "has-type",
-          fieldset: {
-            legend: {
-              text: "Appointment type",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "PIP",
-              text: "PIP",
-              checked: true
-            },
-            {
-              value: "WCA",
-              text: "WCA",
-              conditional: {
-               
-              }
-            }
-          ]
-        }) }}
-
-
-        {{ govukRadios({
-          idPrefix: "has-channel",
-          name: "has-channel",
-          fieldset: {
-            legend: {
-              text: "Appointment channel",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "Telephone",
-              text: "Telephone"
-            },
-            {
-              value: "Face to face",
-              text: "Face to face",
-              checked: true
-            }
-          ]
-        }) }}  
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="vs-type-16" name="vs-type" type="radio" value="Other" data-aria-controls="conditional-location-3">
+                    <label class="govuk-label govuk-radios__label" for="vs-type-16">
+                      Other
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-location-3">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="vs-type-other"> </label>
+                      <select class="govuk-select" id="vs-type-other" name="vs-type" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+                        <option value="" selected disabled>Select an option</option>
+                        <option value="Afghan Citizens Resettlement scheme">Afghan Citizens Resettlement scheme</option>
+                        <option value="Attendance Allowance Special Rules">Attendance Allowance Special Rules</option>
+                        <option value="Bereavement">Bereavement</option>
+                        <option value="CA Claim Completion">CA Claim Completion</option>
+                        <option value="CA Claim Integrity in Doubt">CA Claim Integrity in Doubt</option>
+                        <option value="Centenarian visit">Centenarian visit</option>
+                        <option value="CMG">CMG</option>
+                        <option value="Corporate Acting Body">Corporate Acting Body</option>
+                        <option value="COVID-19 Appointee review">COVID-19 Appointee review</option>
+                        <option value="DLA Claim Completion">DLA Claim Completion</option>
+                        <option value="DLA review">DLA review</option>
+                        <option value="ESA FTA Health and Work Conversation">ESA FTA Health and Work Conversation</option>
+                        <option value="ESA FTA WFI">ESA FTA WFI</option>
+                        <option value="ESA Gaps in Medical Evidence">ESA Gaps in Medical Evidence</option>
+                        <option value="ESA HRT">ESA HRT</option>
+                        <option value="ESA IBR Leap">ESA IBR Leap</option>
+                        <option value="ESA New Claim">ESA New Claim</option>
+                        <option value="ESA New Style">ESA New Style</option>
+                        <option value="ESA Review">ESA Review</option>
+                        <option value="ESA Safeguarding">ESA Safeguarding</option>
+                        <option value="EUSS">EUSS</option>
+                        <option value="GMS">GMS</option>
+                        <option value="IIDB">IIDB</option>
+                        <option value="Income Support New claim">Income Support New claim</option>
+                        <option value="IS HRT">IS HRT</option>
+                        <option value="IS Review">IS Review</option>
+                        <option value="IS Safeguarding">IS Safeguarding</option>
+                        <option value="M2UC - no contact approaching deadline">M2UC - no contact approaching deadline</option>
+                        <option value="M2UC verify ID reqd">M2UC verify ID reqd</option>
+                        <option value="M2UC-in contact">M2UC-in contact</option>
+                        <option value="NINO allocation">NINO allocation</option>
+                        <option value="Overpayment -VEP">Overpayment -VEP</option>
+                        <option value="Overpayment Civil Penalty">Overpayment Civil Penalty</option>
+                        <option value="Payment Query">Payment Query</option>
+                        <option value="PC Application Completion">PC Application Completion</option>
+                        <option value="PC Claim integrity in doubt">PC Claim integrity in doubt</option>
+                        <option value="PC Living together as a Couple">PC Living together as a Couple</option>
+                        <option value="PC Non Declaration of NSP">PC Non Declaration of NSP</option>
+                        <option value="PC Review">PC Review</option>
+                        <option value="PC Self Employed">PC Self Employed</option>
+                        <option value="Pensions DLO">Pensions DLO</option>
+                        <option value="Pensions HRT">Pensions HRT</option>
+                        <option value="Pensions Verification">Pensions Verification</option>  
+                        <option value="Performance Measurement">Performance Measurement</option>
+                        <option value="PIP Appeals">PIP Appeals</option>
+                        <option value="PIP Claim SR">PIP Claim SR</option>
+                        <option value="PIP Discrepancy">PIP Discrepancy</option>
+                        <option value="PIP Review">PIP Review</option>
+                        <option value="POCA">POCA</option>
+                        <option value="Reputational Visit">Reputational Visit</option>
+                        <option value="Rising 16">Rising 16</option>  
+                        <option value="Security Check">Security Check</option>
+                        <option value="Shielding">Shielding</option>
+                        <option value="SMI Authority to Act">SMI Authority to Act</option>
+                        <option value="SP Claim Completion">SP Claim Completion</option>
+                        <option value="SP Review">SP Review</option>
+                        <option value="Special payments Info Gather">Special payments Info Gather</option>
+                        <option value="Support for Mortgage Interest">Support for Mortgage Interest</option>
+                        <option value="UC Advance Payment Review">UC Advance Payment Review</option>  
+                        <option value="UC Exception">UC Exception</option>
+                        <option value="UC Gaps in Medical Evidence">UC Gaps in Medical Evidence</option>
+                        <option value="UC Pre Gather">UC Pre Gather</option>
+                        <option value="UC Review UCR">UC Review UCR</option>
+                        <option value="Ukrainian Citizen Scheme">Ukrainian Citizen Scheme</option>
+                        <option value="Ukrainian NINO Allocation">Ukrainian NINO Allocation</option>
+                        <option value="Verification of Marriage">Verification of Marriage</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>  
 
 
         {% from "govuk/components/button/macro.njk" import govukButton %}
